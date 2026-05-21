@@ -1,4 +1,6 @@
-# Extraction and validation scripts use only the Python standard library.
-# Optional dependencies for executing/editing the inspection notebook locally.
+# Phase 2 PDF extraction uses pdfplumber.
+pdfplumber>=0.11
+
+# Optional dependencies for executing/editing inspection notebooks locally.
 ipykernel>=6.29
 nbconvert>=7.16

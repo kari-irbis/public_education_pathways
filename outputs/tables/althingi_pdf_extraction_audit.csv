@@ -1,0 +1,15 @@
+item,value
+source_url,https://www.althingi.is/altext/pdf/157/s/1182.pdf
+extraction_timestamp_utc,2026-05-21T22:18:42.124593+00:00
+pdf_filename,data/raw/althingi_157_s_1182.pdf
+tables_attempted,Tafla 1; Tafla 2; Tafla 3
+graduates_rows_extracted,143
+graduates_columns_extracted,grunnskoli; number_of_students; source_url; source_note; page; manual_review
+framhald_grades_rows_extracted,184
+framhald_grades_columns_extracted,framhaldsskoli; grunnskoli; average_grunnskoli_icelandic_grade; average_grunnskoli_math_grade; average_framhaldsskoli_graduation_grade; number_of_students; is_fewer_than_5_group; source_url; source_note; page; manual_review
+grunnskoli_grades_rows_extracted,109
+grunnskoli_grades_columns_extracted,grunnskoli; average_grunnskoli_icelandic_grade; average_grunnskoli_math_grade; row_type; is_fewer_than_5_group; source_url; source_note; page; manual_review
+rows_requiring_manual_review,1
+known_parsing_issues,Table 1 and Table 3 were parsed from two-column word positions. | Table 2 was parsed from line endings across pages 6-11. | One source value has two decimals (2.51) and is preserved for manual review.
+fewer_than_5_handling,"Rows labeled Færri en 5 nemendur are preserved, flagged with is_fewer_than_5_group=true where applicable, and are not expanded."
+analysis_readiness,Candidate extraction outputs are structurally valid but should receive manual review before analysis because PDF-derived tables can contain line-wrap or layout edge cases.
