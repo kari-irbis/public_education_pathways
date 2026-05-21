@@ -1,0 +1,113 @@
+source_school_name,normalized_school_name,possible_match_1,possible_match_1_sveitarfelag,possible_match_1_score,possible_match_2,possible_match_2_sveitarfelag,possible_match_2_score,in_althingi_graduates,in_althingi_framhaldsskoli_grunnskoli,in_althingi_grunnskoli_grades,in_hagstofa_student_counts,in_hagstofa_10th_grade_counts,notes
+Andakílsskóli,andakilsskoli,Landakotsskóli,Reykjavíkurborg,0.815,Hrafnagilsskóli,Eyjafjarðarsveit,0.786,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Ásgarðsskóli,asgardsskoli,Áslandsskóli,Hafnarfjarðarkaupstaður,0.833,Garðaskóli,Garðabær,0.818,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Ásgarður,asgardur,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+"Auðarskóli, grunnskóladeild Búðardal",audarskoli grunnskoladeild budardal,,,,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Barnaskóli Bárðdæla,barnaskoli barddaela,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Barnaskóli Hjallastefnunnar Garðabæ,barnaskoli hjallastefnunnar gardabae,Barnaskóli Hjallastefnunnar Gbr,Garðabær,0.896,Barnaskóli Hjallastefnunnar Hfj,Hafnarfjarðarkaupstaður,0.836,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Barnaskóli Hjallastefnunnar Hafnarfirði,barnaskoli hjallastefnunnar hafnarfirdi,Barnaskóli Hjallastefnunnar Hfj,Hafnarfjarðarkaupstaður,0.857,Barnaskóli Hjallastefnunnar Gbr,Garðabær,0.829,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Barnaskóli Hjallastefnunnar Reykjanesbæ,barnaskoli hjallastefnunnar reykjanesbae,Barnaskóli Hjallastefnunnar í Reykjavík,Reykjavíkurborg,0.861,Barnaskóli Hjallastefnunnar Gbr,Garðabær,0.817,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Barnaskóli Ólafsfjarðar,barnaskoli olafsfjardar,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Barnaskóli Vestmannaeyja,barnaskoli vestmannaeyja,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Bláskógaskóli Reykholti,blaskogaskoli reykholti,,,,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Blönduskóli,blonduskoli,,,,,,,true,false,true,false,false,No exact or high-confidence fuzzy match accepted.
+Brautarholts- og Gnúpverjaskóli,brautarholts og gnupverjaskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Brautarholtsskóli,brautarholtsskoli,Réttarholtsskóli,Reykjavíkurborg,0.848,Borgarhólsskóli,Norðurþing,0.812,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Broddanesskóli,broddanesskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Dalbrautarskóli,dalbrautarskoli,Brúarskóli,Reykjavíkurborg,0.800,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Digranesskóli,digranesskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Einholtsskóli,einholtsskoli,Breiðholtsskóli,Reykjavíkurborg,0.857,Langholtsskóli,Reykjavíkurborg,0.815,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Eskifjarðarskóli,eskifjardarskoli,Seyðisfjarðarskóli,Seyðisfjarðarkaupstaður,0.824,,,,true,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+"Fellaskóli, Norðurfelli",fellaskoli nordurfelli,,,,,,,true,false,true,false,false,No exact or high-confidence fuzzy match accepted.
+Fellaskóli (Reykjavík),fellaskoli reykjavik,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Finnbogastaðaskóli,finnbogastadaskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Fljótshlíðarskóli,fljotshlidarskoli,Hlíðarskóli,Akureyrarkaupstaður,0.786,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Framsýn menntun ehf.,framsyn menntun,,,,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Gagnfræðaskólinn Ólafsfirði,gagnfraedaskolinn olafsfirdi,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Gaulverjaskóli,gaulverjaskoli,Glerárskóli,Akureyrarkaupstaður,0.800,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Gnúpverjaskóli,gnupverjaskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Akrahrepps,grunnskoli akrahrepps,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Bláskógabyggðar/Bláskógaskóli,grunnskoli blaskogabyggdar blaskogaskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Bolungarvíkur,grunnskoli bolungarvikur,Grunnskólinn í Bolungarvík,Bolungarvík,0.957,Grunnskólinn á Hólmavík,Strandabyggð,0.791,true,true,true,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Dalvíkurbyggðar,grunnskoli dalvikurbyggdar,Grunnskóli Fjallabyggðar,Fjallabyggð,0.800,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Djúpavogs,grunnskoli djupavogs,,,,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Grindavíkur,grunnskoli grindavikur,,,,,,,true,true,true,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Mjóafjarðar,grunnskoli mjoafjardar,Grunnskóli Hornafjarðar,Sveitarfélagið Hornafjörður,0.889,Grunnskóli Borgarfjarðar,Borgarbyggð,0.870,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Önundarfjarðar,grunnskoli onundarfjardar,Grunnskóli Grundarfjarðar,Grundarfjarðarbær,0.920,Grunnskóli Hornafjarðar,Sveitarfélagið Hornafjörður,0.875,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Raufarhafnar,grunnskoli raufarhafnar,Grunnskóli Hornafjarðar,Sveitarfélagið Hornafjörður,0.783,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Seltjarnarness,grunnskoli seltjarnarness,,,,,,,true,true,true,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Siglufjarðar,grunnskoli siglufjardar,Grunnskóli Eskifjarðar,Fjarðabyggð,0.889,Grunnskóli Grundarfjarðar,Grundarfjarðarbær,0.833,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Vestmannaeyja,grunnskoli vestmannaeyja,Grunnskóli Vestmannaeyja/Barnaskólinn,Vestmannaeyjabær,0.787,,,,true,true,true,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskóli Vesturbyggðar,grunnskoli vesturbyggdar,,,,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn á Bakkafirði,grunnskolinn a bakkafirdi,Grunnskólinn á Ísafirði,Ísafjarðarbær,0.875,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn á Blönduósi/Blönduskóli,grunnskolinn a blonduosi blonduskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn á Borðeyri,grunnskolinn a bordeyri,Grunnskólinn á Suðureyri,Ísafjarðarbær,0.851,Grunnskólinn Borgarnesi,Borgarbyggð,0.800,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn á Eskifirði,grunnskolinn a eskifirdi,Grunnskólinn á Ísafirði,Ísafjarðarbær,0.894,Grunnskóli Eskifjarðar,Fjarðabyggð,0.857,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn á Hellissandi,grunnskolinn a hellissandi,Grunnskólinn á Hellu,Rangárþing ytra,0.826,Grunnskólinn á Laugalandi,Rangárþing ytra,0.824,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn á Laugarvatni,grunnskolinn a laugarvatni,Grunnskólinn á Laugalandi,Rangárþing ytra,0.902,Grunnskólinn í Bolungarvík,Bolungarvík,0.818,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn á Stöðvarfirði,grunnskolinn a stodvarfirdi,Grunnskólinn á Ísafirði,Ísafjarðarbær,0.880,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn að Hólum,grunnskolinn ad holum,Grunnskólinn á Hellu,Rangárþing ytra,0.878,Grunnskólinn á Hólmavík,Strandabyggð,0.864,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn Hofsósi,grunnskolinn hofsosi,Grunnskólinn í Hofgarði,Sveitarfélagið Hornafjörður,0.811,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn í Austur-Landeyjum,grunnskolinn i austur landeyjum,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn í Breiðdalshreppi,grunnskolinn i breiddalshreppi,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn í Búðardal,grunnskolinn i budardal,Grunnskólinn í Hofgarði,Sveitarfélagið Hornafjörður,0.783,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn í Grímsey/Grímseyjarskóli,grunnskolinn i grimsey grimseyjarskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn í Ólafsfirði,grunnskolinn i olafsfirdi,Grunnskólinn á Ísafirði,Ísafjarðarbær,0.850,Grunnskólinn í Hofgarði,Sveitarfélagið Hornafjörður,0.833,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn í Ólafsvík,grunnskolinn i olafsvik,Grunnskólinn á Hólmavík,Strandabyggð,0.895,Grunnskólinn í Bolungarvík,Bolungarvík,0.857,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn í Svalbarðshreppi/Svalbarðsskóli,grunnskolinn i svalbardshreppi svalbardsskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn Ljósaborg,grunnskolinn ljosaborg,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Grunnskólinn Tjarnarlundi,grunnskolinn tjarnarlundi,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Háaleitisskóli - Álftamýri,haaleitisskoli alftamyri,,,,,,,true,true,true,false,false,No exact or high-confidence fuzzy match accepted.
+Háaleitisskóli - Reykjanesbæ,haaleitisskoli reykjanesbae,,,,,,,true,true,true,false,false,No exact or high-confidence fuzzy match accepted.
+Háaleitisskóli (Reykjanesbæ),haaleitisskoli reykjanesbae,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Hafnarskóli,hafnarskoli,Arnarskóli,Kópavogsbær,0.857,Hagaskóli,Reykjavíkurborg,0.800,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Hafralækjarskóli,hafralaekjarskoli,Lækjarskóli,Hafnarfjarðarkaupstaður,0.828,Laugalækjarskóli,Reykjavíkurborg,0.824,true,true,true,true,true,No exact or high-confidence fuzzy match accepted.
+Hallormsstaðaskóli,hallormsstadaskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Hamarsskóli Vestmannaeyjum,hamarsskoli vestmannaeyjum,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Heiðarskóli - Hvalfjarðarsveit,heidarskoli hvalfjardarsveit,,,,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Heiðarskóli (Hvalfjarðarsveit),heidarskoli hvalfjardarsveit,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Heiðarskóli - Reykjanesbæ,heidarskoli reykjanesbae,,,,,,,true,true,true,false,false,No exact or high-confidence fuzzy match accepted.
+Heiðarskóli (Reykjanesbæ),heidarskoli reykjanesbae,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Heppuskóli,heppuskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Hjallaskóli,hjallaskoli,Vallaskóli,Sveitarfélagið Árborg,0.857,Hagaskóli,Reykjavíkurborg,0.800,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Hlíðarhúsaskóli,hlidarhusaskoli,Hlíðarskóli,Akureyrarkaupstaður,0.846,Hlíðaskóli,Reykjavíkurborg,0.800,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Hlíðarskóli Akureyri,hlidarskoli akureyri,,,,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Hrollaugsstaðaskóli,hrollaugsstadaskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Húnavallaskóli,hunavallaskoli,Hraunvallaskóli,Hafnarfjarðarkaupstaður,0.897,Vallaskóli,Sveitarfélagið Árborg,0.833,true,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Húsabakkaskóli,husabakkaskoli,Húsaskóli,Reykjavíkurborg,0.783,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Kelduskóli,kelduskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Kelduskóli - Vík,kelduskoli vik,,,,,,,true,false,true,false,false,No exact or high-confidence fuzzy match accepted.
+Kerhólsskóli,kerholsskoli,Kerhólsskól,Grímsnes- og Grafningsher.,0.957,Hvolsskóli,Rangárþing eystra,0.818,true,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Kleppjárnsreykjaskóli,kleppjarnsreykjaskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Kópaskersskóli,kopaskersskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Korpuskóli,korpuskoli,Kóraskóli,Kópavogsbær,0.842,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Laugalandsskóli í Holtum,laugalandsskoli i holtum,,,,,,,true,false,true,true,true,No exact or high-confidence fuzzy match accepted.
+Laugargerðisskóli,laugargerdisskoli,Laugarnesskóli,Reykjavíkurborg,0.839,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Litlulaugaskóli,litlulaugaskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Ljósafossskóli,ljosafossskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Lýsuhólsskóli,lysuholsskoli,Álfhólsskóli,Kópavogsbær,0.800,Hvolsskóli,Rangárþing eystra,0.783,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Meðferðarheimilið á Torfastöðum,medferdarheimilid a torfastodum,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Nesjaskóli,nesjaskoli,Nesskóli,Fjarðabyggð,0.889,Engjaskóli,Reykjavíkurborg,0.800,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+NÚ - framsýn menntun,nu framsyn menntun,,,,,,,true,false,true,false,false,No exact or high-confidence fuzzy match accepted.
+Öskjuhlíðarskóli,oskjuhlidarskoli,Hlíðarskóli,Akureyrarkaupstaður,0.815,Reykjahlíðarskóli,Skútustaðahreppur,0.788,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Reykholtsskóli,reykholtsskoli,Reykhólaskóli,Reykhólahreppur,0.889,Breiðholtsskóli,Reykjavíkurborg,0.828,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Reykjavík International School,reykjavik international school,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Safamýrarskóli,safamyrarskoli,Álftamýrarskóli,Reykjavíkurborg,0.897,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Sandgerðisskóli,sandgerdisskoli,,,,,,,true,true,true,true,true,No exact or high-confidence fuzzy match accepted.
+Sandvíkurskóli,sandvikurskoli,Súðavíkurskóli,Súðavík,0.857,Víkurskóli,Reykjavíkurborg,0.833,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Seljalandsskóli,seljalandsskoli,Sjálandsskóli,Garðabær,0.929,Snælandsskóli,Kópavogsbær,0.828,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Sólgarðaskóli,solgardaskoli,Garðaskóli,Garðabær,0.870,Foldaskóli,Reykjavíkurborg,0.783,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Sólvallaskóli,solvallaskoli,Vallaskóli,Sveitarfélagið Árborg,0.870,Salaskóli,Kópavogsbær,0.818,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Steinsstaðaskóli,steinsstadaskoli,Egilsstaðaskóli,Múlaþing (Fljótsdalshérað),0.839,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Stöðvarfjarðarskóli,stodvarfjardarskoli,Öxarfjarðarskóli,Norðurþing,0.857,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Þingborgarskóli,thingborgarskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Þykkvabæjarskóli,thykkvabaejarskoli,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Vættaskóli,vaettaskoli,Klettaskóli,Reykjavíkurborg,0.818,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Vættaskóli - Engi,vaettaskoli engi,,,,,,,true,true,true,false,false,No exact or high-confidence fuzzy match accepted.
+Varmalandsskóli,varmalandsskoli,Áslandsskóli,Hafnarfjarðarkaupstaður,0.815,Varmahlíðaskóli,Sveitarfélagið Skagafjörður,0.800,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Vesturhlíðarskóli,vesturhlidarskoli,Suðurhlíðaskóli,Reykjavíkurborg,0.812,Hlíðarskóli,Akureyrarkaupstaður,0.786,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Víkurskóli,vikurskoli,Víkurskóli,Reykjavíkurborg,1.000,Víkurskóli,Mýrdalshreppur,1.000,true,true,true,false,false,No exact or high-confidence fuzzy match accepted.
+Víkurskóli (Reykjavík),vikurskoli reykjavik,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+"Víkurskóli, Vík í Mýrdal",vikurskoli vik i myrdal,,,,,,,true,false,false,false,false,No exact or high-confidence fuzzy match accepted.
+Víkurskóli (Vík í Mýrdal),vikurskoli vik i myrdal,,,,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.
+Villingaholtsskóli,villingaholtsskoli,Langholtsskóli,Reykjavíkurborg,0.812,,,,false,false,false,true,true,No exact or high-confidence fuzzy match accepted.

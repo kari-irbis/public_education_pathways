@@ -1,0 +1,18 @@
+section,dataset,item,value
+source,,external_mapping_source_used,Samband public grunnskólar Excel: https://samband-islenskra-sveitarfelaga.cdn.prismic.io/samband-islenskra-sveitarfelaga/agHACKYofJOwHEOQ_Netfangalistigrunnsk%C3%B3lauppf%C3%A6r%C3%B0ur11.05.2026.xlsx
+source,,external_mapping_page_cache,data/raw/samband_grunnskolar_page.html
+source,,external_mapping_excel_cache,data/raw/samband_netfangalisti_grunnskola_2026-05-11.xlsx
+summary,,created_at_utc,2026-05-21T23:06:16.340510+00:00
+summary,,total_unique_source_school_names,277
+summary,,excluded_aggregate_group_rows,2
+summary,,exact_matches,157
+summary,,fuzzy_high_confidence_matches,6
+summary,,manual_matches_applied,0
+summary,,rows_needing_manual_review,112
+match_rate_by_source,in_althingi_graduates,matched_non_excluded,114/143 (79.7%)
+match_rate_by_source,in_althingi_framhaldsskoli_grunnskoli,matched_non_excluded,66/77 (85.7%)
+match_rate_by_source,in_althingi_grunnskoli_grades,matched_non_excluded,91/107 (85.0%)
+match_rate_by_source,in_hagstofa_student_counts,matched_non_excluded,158/251 (62.9%)
+match_rate_by_source,in_hagstofa_10th_grade_counts,matched_non_excluded,158/251 (62.9%)
+manual_review,,top_common_unmatched_patterns,grunnskolinn a: 7; grunnskolinn i: 7; barnaskoli hjallastefnunnar: 3; haaleitisskoli reykjanesbae: 2; heidarskoli hvalfjardarsveit: 2; heidarskoli reykjanesbae: 2; vikurskoli vik: 2; andakilsskoli: 1; asgardsskoli: 1; asgardur: 1
+manual_review,,notes,Weak fuzzy matches are not accepted automatically; fill data/manual/manual_school_crosswalk.csv and rerun.
