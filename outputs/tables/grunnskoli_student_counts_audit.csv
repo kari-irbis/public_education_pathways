@@ -1,0 +1,94 @@
+audit_section,year,grade,item,value,source_note
+source,,,source_url,https://px.hagstofa.is/pxis/pxweb/is/Samfelag/Samfelag__skolamal__2_grunnskolastig__0_gsNemendur/SKO02102.px/,
+source,,,api_url,https://px.hagstofa.is/pxis/api/v1/is/Samfelag/skolamal/2_grunnskolastig/0_gsNemendur/SKO02102.px,
+source,,,extracted_at_utc,2026-05-21T22:50:14.368979+00:00,
+source,,,raw_metadata_file,data/raw/hagstofa_sko02102_metadata.json,
+source,,,raw_response_file,data/raw/hagstofa_sko02102_all_jsonstat2.json,
+summary,,,processed_grade_rows,40023,
+summary,,,processed_10th_grade_rows,3862,
+summary,,,years_extracted,2001; 2002; 2003; 2004; 2005; 2006; 2007; 2008; 2009; 2010; 2011; 2012; 2013; 2014; 2015; 2016; 2017; 2018; 2019; 2020; 2021; 2022; 2023; 2024,
+summary,,,grades_extracted,1. bekkur; 2. bekkur; 3. bekkur; 4. bekkur; 5. bekkur; 6. bekkur; 7. bekkur; 8. bekkur; 9. bekkur; 10. bekkur,
+summary,,,missing_source_cells_not_written,25740,Null/missing cells in the raw JSON-stat response are omitted from processed outputs.
+summary,,,hagstofa_source_caveats,"Hagstofa table SKO02102. Nemendum sem ekki er raðað í bekki af skólum eru flokkaðir í bekki eftir aldri. Nemendur í fimm ára bekk eru ekki meðtaldir en eru sýndir í sérstakri töflu til ársins 2016; eftir það teljast þeir með leikskólabörnum. Notes in the source also flag possible registration issues for Einholtsskóli in 2001-2002, Dalbrautarskóli in 2001, and that pupils in Kárahnjúkaskóli 2004-2006 are not included. This is a denominator/proxy source, not a true framhaldsskóli graduation-rate denominator.",
+by_year,2001,,schools_with_grade_rows,192,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2001,Alls,total_students_source_all_schools,44103,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2001,10. bekkur,total_10th_grade_students_source_all_schools,3878,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2002,,schools_with_grade_rows,193,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2002,Alls,total_students_source_all_schools,44695,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2002,10. bekkur,total_10th_grade_students_source_all_schools,4155,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2003,,schools_with_grade_rows,188,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2003,Alls,total_students_source_all_schools,44809,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2003,10. bekkur,total_10th_grade_students_source_all_schools,4609,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2004,,schools_with_grade_rows,178,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2004,Alls,total_students_source_all_schools,44511,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2004,10. bekkur,total_10th_grade_students_source_all_schools,4488,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2005,,schools_with_grade_rows,177,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2005,Alls,total_students_source_all_schools,44336,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2005,10. bekkur,total_10th_grade_students_source_all_schools,4779,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2006,,schools_with_grade_rows,173,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2006,Alls,total_students_source_all_schools,43875,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2006,10. bekkur,total_10th_grade_students_source_all_schools,4494,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2007,,schools_with_grade_rows,174,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2007,Alls,total_students_source_all_schools,43841,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2007,10. bekkur,total_10th_grade_students_source_all_schools,4637,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2008,,schools_with_grade_rows,174,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2008,Alls,total_students_source_all_schools,43511,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2008,10. bekkur,total_10th_grade_students_source_all_schools,4703,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2009,,schools_with_grade_rows,175,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2009,Alls,total_students_source_all_schools,42929,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2009,10. bekkur,total_10th_grade_students_source_all_schools,4511,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2010,,schools_with_grade_rows,172,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2010,Alls,total_students_source_all_schools,42539,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2010,10. bekkur,total_10th_grade_students_source_all_schools,4343,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2011,,schools_with_grade_rows,171,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2011,Alls,total_students_source_all_schools,42365,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2011,10. bekkur,total_10th_grade_students_source_all_schools,4421,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2012,,schools_with_grade_rows,168,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2012,Alls,total_students_source_all_schools,42320,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2012,10. bekkur,total_10th_grade_students_source_all_schools,4283,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2013,,schools_with_grade_rows,169,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2013,Alls,total_students_source_all_schools,42734,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2013,10. bekkur,total_10th_grade_students_source_all_schools,4264,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2014,,schools_with_grade_rows,167,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2014,Alls,total_students_source_all_schools,43136,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2014,10. bekkur,total_10th_grade_students_source_all_schools,4197,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2015,,schools_with_grade_rows,168,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2015,Alls,total_students_source_all_schools,43760,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2015,10. bekkur,total_10th_grade_students_source_all_schools,4340,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2016,,schools_with_grade_rows,170,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2016,Alls,total_students_source_all_schools,44527,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2016,10. bekkur,total_10th_grade_students_source_all_schools,4181,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2017,,schools_with_grade_rows,169,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2017,Alls,total_students_source_all_schools,45195,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2017,10. bekkur,total_10th_grade_students_source_all_schools,4117,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2018,,schools_with_grade_rows,169,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2018,Alls,total_students_source_all_schools,45904,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2018,10. bekkur,total_10th_grade_students_source_all_schools,4277,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2019,,schools_with_grade_rows,170,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2019,Alls,total_students_source_all_schools,46254,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2019,10. bekkur,total_10th_grade_students_source_all_schools,4430,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2020,,schools_with_grade_rows,173,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2020,Alls,total_students_source_all_schools,46688,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2020,10. bekkur,total_10th_grade_students_source_all_schools,4427,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2021,,schools_with_grade_rows,174,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2021,Alls,total_students_source_all_schools,46859,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2021,10. bekkur,total_10th_grade_students_source_all_schools,4604,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2022,,schools_with_grade_rows,174,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2022,Alls,total_students_source_all_schools,47115,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2022,10. bekkur,total_10th_grade_students_source_all_schools,4725,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2023,,schools_with_grade_rows,174,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2023,Alls,total_students_source_all_schools,47507,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2023,10. bekkur,total_10th_grade_students_source_all_schools,5028,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_year,2024,,schools_with_grade_rows,174,Schools excluding the aggregate Alls row and excluding null grade cells.
+by_year,2024,Alls,total_students_source_all_schools,47162,"Taken from Hagstofa Skóli=Alls, Bekkur=Alls."
+by_year,2024,10. bekkur,total_10th_grade_students_source_all_schools,5232,"Taken from Hagstofa Skóli=Alls, Bekkur=10. bekkur."
+by_grade,,1. bekkur,rows_extracted,4073,
+by_grade,,2. bekkur,rows_extracted,4083,
+by_grade,,3. bekkur,rows_extracted,4083,
+by_grade,,4. bekkur,rows_extracted,4084,
+by_grade,,5. bekkur,rows_extracted,4027,
+by_grade,,6. bekkur,rows_extracted,4028,
+by_grade,,7. bekkur,rows_extracted,4016,
+by_grade,,8. bekkur,rows_extracted,3892,
+by_grade,,9. bekkur,rows_extracted,3875,
+by_grade,,10. bekkur,rows_extracted,3862,
