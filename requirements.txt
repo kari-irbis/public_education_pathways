@@ -1,0 +1,4 @@
+# Extraction and validation scripts use only the Python standard library.
+# Optional dependencies for executing/editing the inspection notebook locally.
+ipykernel>=6.29
+nbconvert>=7.16

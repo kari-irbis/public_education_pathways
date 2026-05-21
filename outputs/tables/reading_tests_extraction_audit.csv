@@ -1,0 +1,14 @@
+item,value
+source_url,https://www.althingi.is/altext/157/s/0837.html
+extracted_at_utc,2026-05-21T15:59:47.932864+00:00
+rows_extracted,1920
+non_null_value_rows,1700
+suppressed_or_missing_value_rows,220
+school_years_found,2020-2021; 2021-2022; 2022-2023; 2023-2024; 2024-2025
+measurement_periods_found,haust; vor
+municipalities_found,48
+municipality_names_found,Akraneskaupstaður; Akureyrarbær; Bláskógabyggð; Bolungarvíkurkaupstaður; Borgarbyggð; Dalvíkurbyggð; Djúpavogshreppur; Eyjafjarðarsveit; Fjallabyggð; Fjarðabyggð; Fljótsdalshérað; Flóahreppur; Garðabær; Grindavíkurbær; Grundarfjarðarbær; Grímsnes– og Grafningshreppur; Hafnarfjarðarkaupstaður; Hrunamannahreppur; Hvalfjarðarsveit; Hveragerðisbær; Húnabyggð; Húnaþing vestra; Kópavogsbær; Langanesbyggð; Mosfellsbær; Mýrdalshreppur; Norðurþing; Rangárþing eystra; Rangárþing ytra; Reykjanesbær; Reykjavíkurborg; Seltjarnarnesbær; Seyðisfjarðarkaupstaður; Snæfellsbær; Stykkishólmsbær; Suðurnesjabær; Svalbarðsstrandarhreppur; Sveitarfélagið Hornafjörður; Sveitarfélagið Skagafjörður; Sveitarfélagið Skagaströnd; Sveitarfélagið Vogar; Sveitarfélagið Árborg; Sveitarfélagið Ölfus; Vestmannaeyjabær; Vesturbyggð; Vopnafjarðarhreppur; Ísafjarðarbær; Þingeyjarsveit
+metrics_found,1. vidmid; 2. vidmid; 3. vidmid; naer_lagmarksvidmidi_2_3
+missing_suppressed_value_handling,Suppressed/missing public values are left blank in value_pct. The public source states values are not given for groups with fewer than 10 students.
+number_of_students_handling,number_of_students is unavailable in this source and is left blank because the public table provides percentages only.
+parsing_issues_manual_review,Ministry page was attempted/cached but did not expose a complete parseable sveitarfelag table; parsed 41 municipalities. | Used public Althingi HTML answer as fallback mirror of the ministry Lesfimi table; no Althingi PDF extraction has been started.
