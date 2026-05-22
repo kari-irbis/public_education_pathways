@@ -1,0 +1,59 @@
+section,item,value
+summary,reading_test_rows,1920
+summary,source_municipalities,48
+summary,harmonized_municipalities,46
+summary,municipalities_harmonized_unchanged,44
+summary,municipalities_harmonized_by_crosswalk,4
+summary,municipalities_needing_review,0
+summary,rows_harmonized_unchanged,1760
+summary,rows_harmonized_by_crosswalk,160
+summary,rows_needing_review,0
+unmatched,municipalities,
+municipality,Akraneskaupstaður,Akraneskaupstaður | unchanged | Already current for project joins.
+municipality,Akureyrarbær,Akureyrarbær | unchanged | No project-local harmonization needed; carried forward as current/source name.
+municipality,Bláskógabyggð,Bláskógabyggð | unchanged | Already current for project joins.
+municipality,Bolungarvíkurkaupstaður,Bolungarvíkurkaupstaður | unchanged | No project-local harmonization needed; carried forward as current/source name.
+municipality,Borgarbyggð,Borgarbyggð | unchanged | Already current for project joins.
+municipality,Dalvíkurbyggð,Dalvíkurbyggð | unchanged | Already current for project joins.
+municipality,Djúpavogshreppur,Múlaþing | harmonized | Former municipality; now Múlaþing.
+municipality,Eyjafjarðarsveit,Eyjafjarðarsveit | unchanged | Already current for project joins.
+municipality,Fjallabyggð,Fjallabyggð | unchanged | Already current for project joins.
+municipality,Fjarðabyggð,Fjarðabyggð | unchanged | Already current for project joins.
+municipality,Fljótsdalshérað,Múlaþing | harmonized | Former municipality; now Múlaþing.
+municipality,Flóahreppur,Flóahreppur | unchanged | Already current for project joins.
+municipality,Garðabær,Garðabær | unchanged | Already current for project joins.
+municipality,Grindavíkurbær,Grindavíkurbær | unchanged | Already current for project joins.
+municipality,Grundarfjarðarbær,Grundarfjarðarbær | unchanged | Already current for project joins.
+municipality,Grímsnes– og Grafningshreppur,Grímsnes- og Grafningshreppur | harmonized | Punctuation variant normalized from en dash to hyphen for current municipality joins.
+municipality,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður | unchanged | Already current for project joins.
+municipality,Hrunamannahreppur,Hrunamannahreppur | unchanged | Already current for project joins.
+municipality,Hvalfjarðarsveit,Hvalfjarðarsveit | unchanged | Already current for project joins.
+municipality,Hveragerðisbær,Hveragerðisbær | unchanged | Already current for project joins.
+municipality,Húnabyggð,Húnabyggð | unchanged | Already current for project joins.
+municipality,Húnaþing vestra,Húnaþing vestra | unchanged | Already current for project joins.
+municipality,Kópavogsbær,Kópavogsbær | unchanged | Already current for project joins.
+municipality,Langanesbyggð,Langanesbyggð | unchanged | Already current for project joins.
+municipality,Mosfellsbær,Mosfellsbær | unchanged | Already current for project joins.
+municipality,Mýrdalshreppur,Mýrdalshreppur | unchanged | Already current for project joins.
+municipality,Norðurþing,Norðurþing | unchanged | Already current for project joins.
+municipality,Rangárþing eystra,Rangárþing eystra | unchanged | Already current for project joins.
+municipality,Rangárþing ytra,Rangárþing ytra | unchanged | Already current for project joins.
+municipality,Reykjanesbær,Reykjanesbær | unchanged | Already current for project joins.
+municipality,Reykjavíkurborg,Reykjavíkurborg | unchanged | Already current for project joins.
+municipality,Seltjarnarnesbær,Seltjarnarnesbær | unchanged | No project-local harmonization needed; carried forward as current/source name.
+municipality,Seyðisfjarðarkaupstaður,Múlaþing | harmonized | Former municipality; now Múlaþing.
+municipality,Snæfellsbær,Snæfellsbær | unchanged | Already current for project joins.
+municipality,Stykkishólmsbær,Stykkishólmsbær | unchanged | Already current for project joins.
+municipality,Suðurnesjabær,Suðurnesjabær | unchanged | Already current for project joins.
+municipality,Svalbarðsstrandarhreppur,Svalbarðsstrandarhreppur | unchanged | Already current for project joins.
+municipality,Sveitarfélagið Hornafjörður,Sveitarfélagið Hornafjörður | unchanged | Already current for project joins.
+municipality,Sveitarfélagið Skagafjörður,Sveitarfélagið Skagafjörður | unchanged | Already current for project joins.
+municipality,Sveitarfélagið Skagaströnd,Sveitarfélagið Skagaströnd | unchanged | Already current for project joins.
+municipality,Sveitarfélagið Vogar,Sveitarfélagið Vogar | unchanged | Already current for project joins.
+municipality,Sveitarfélagið Árborg,Sveitarfélagið Árborg | unchanged | Already current for project joins.
+municipality,Sveitarfélagið Ölfus,Sveitarfélagið Ölfus | unchanged | Already current for project joins.
+municipality,Vestmannaeyjabær,Vestmannaeyjabær | unchanged | Already current for project joins.
+municipality,Vesturbyggð,Vesturbyggð | unchanged | Already current for project joins.
+municipality,Vopnafjarðarhreppur,Vopnafjarðarhreppur | unchanged | Already current for project joins.
+municipality,Ísafjarðarbær,Ísafjarðarbær | unchanged | Already current for project joins.
+municipality,Þingeyjarsveit,Þingeyjarsveit | unchanged | Already current for project joins.

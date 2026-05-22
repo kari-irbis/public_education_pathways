@@ -196,13 +196,21 @@ def main() -> int:
 
     statuses = Counter(row["match_status"] for row in crosswalk)
     priorities = Counter(row["mapping_priority"] for row in crosswalk)
+    analysis_required_needing_review = sum(
+        1 for row in crosswalk if row["mapping_priority"] == "analysis_required" and row["match_status"] == "needs_manual_review"
+    )
+    reference_only_needing_review = sum(
+        1 for row in crosswalk if row["mapping_priority"] == "reference_only" and row["match_status"] == "needs_manual_review"
+    )
     print(
         "OK: grunnskoli-sveitarfelag crosswalk passed validation "
         f"({len(crosswalk)} rows; analysis_required={priorities['analysis_required']}, "
         f"reference_only={priorities['reference_only']}, exact={statuses['matched_exact']}, "
         f"fuzzy={statuses['matched_fuzzy_high_confidence']}, rule={statuses['matched_rule']}, "
         f"municipality_rule={statuses['matched_municipality_rule_canonical_uncertain']}, "
-        f"review={statuses['needs_manual_review']}, excluded={statuses['excluded_group_or_aggregate']}, "
+        f"analysis_required_needing_review={analysis_required_needing_review}, "
+        f"reference_only_needing_review={reference_only_needing_review}, "
+        f"excluded={statuses['excluded_group_or_aggregate']}, "
         f"municipality_needs_review={sum(1 for row in crosswalk if row['sveitarfelag_harmonization_status'] == 'needs_review')})."
     )
     return 0
