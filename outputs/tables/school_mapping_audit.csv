@@ -2,7 +2,7 @@ section,dataset,item,value
 source,,external_mapping_source_used,Samband public grunnskólar Excel: https://samband-islenskra-sveitarfelaga.cdn.prismic.io/samband-islenskra-sveitarfelaga/agHACKYofJOwHEOQ_Netfangalistigrunnsk%C3%B3lauppf%C3%A6r%C3%B0ur11.05.2026.xlsx
 source,,external_mapping_page_cache,data/raw/samband_grunnskolar_page.html
 source,,external_mapping_excel_cache,data/raw/samband_netfangalisti_grunnskola_2026-05-11.xlsx
-summary,,created_at_utc,2026-05-21T23:47:32.169503+00:00
+summary,,created_at_utc,2026-05-22T00:16:51.588814+00:00
 summary,,total_unique_source_school_names,277
 summary,,althingi_relevant_total_including_excluded,145
 summary,,analysis_required_total,143
@@ -10,31 +10,19 @@ summary,,analysis_required_matched_exact,108
 summary,,analysis_required_matched_fuzzy,5
 summary,,analysis_required_matched_by_rule,4
 summary,,analysis_required_matched_by_municipality_only_rule,10
-summary,,analysis_required_matched_manual,0
-summary,,analysis_required_needing_manual_review,16
+summary,,analysis_required_matched_manual,16
+summary,,analysis_required_needing_manual_review,0
 summary,,reference_only_total,132
 summary,,reference_only_unresolved,75
 summary,,excluded_aggregate_group_rows,2
-match_rate_by_source,in_althingi_graduates,matched_non_excluded,127/143 (88.8%)
-match_rate_by_source,in_althingi_framhaldsskoli_grunnskoli,matched_non_excluded,73/77 (94.8%)
-match_rate_by_source,in_althingi_grunnskoli_grades,matched_non_excluded,99/107 (92.5%)
-match_rate_by_source,in_hagstofa_student_counts,matched_non_excluded,171/251 (68.1%)
-match_rate_by_source,in_hagstofa_10th_grade_counts,matched_non_excluded,171/251 (68.1%)
+summary,,rows_with_sveitarfelag_harmonized_populated,200
+summary,,municipality_harmonizations_applied,29
+summary,,municipality_names_needing_review,0
+source,,municipality_harmonization_source,Project-local municipality_name_crosswalk.csv seeded from agreed Phase 4 harmonization mappings.
+match_rate_by_source,in_althingi_graduates,matched_non_excluded,143/143 (100.0%)
+match_rate_by_source,in_althingi_framhaldsskoli_grunnskoli,matched_non_excluded,77/77 (100.0%)
+match_rate_by_source,in_althingi_grunnskoli_grades,matched_non_excluded,107/107 (100.0%)
+match_rate_by_source,in_hagstofa_student_counts,matched_non_excluded,176/251 (70.1%)
+match_rate_by_source,in_hagstofa_10th_grade_counts,matched_non_excluded,176/251 (70.1%)
 manual_review,analysis_required,notes,Main review file includes only unresolved analysis_required rows. Reference-only unresolved rows are in school_mapping_reference_only_review.csv.
-unresolved_analysis_required,,Víkurskóli,"althingi_graduate_count=29; possible_match_1=Víkurskóli (Mýrdalshreppur, score=1.000)"
-unresolved_analysis_required,,Vættaskóli - Engi,"althingi_graduate_count=12; possible_match_1= (, score=)"
-unresolved_analysis_required,,Blönduskóli,"althingi_graduate_count=8; possible_match_1= (, score=)"
-unresolved_analysis_required,,Hafralækjarskóli,"althingi_graduate_count=7; possible_match_1=Lækjarskóli (Hafnarfjarðarkaupstaður, score=0.828)"
-unresolved_analysis_required,,Kelduskóli - Vík,"althingi_graduate_count=7; possible_match_1= (, score=)"
-unresolved_analysis_required,,Laugalandsskóli í Holtum,"althingi_graduate_count=6; possible_match_1= (, score=)"
-unresolved_analysis_required,,Sandgerðisskóli,"althingi_graduate_count=6; possible_match_1= (, score=)"
-unresolved_analysis_required,,NÚ - framsýn menntun,"althingi_graduate_count=5; possible_match_1= (, score=)"
-unresolved_analysis_required,,Bláskógaskóli Reykholti,"althingi_graduate_count=4; possible_match_1= (, score=)"
-unresolved_analysis_required,,Grunnskólinn á Eskifirði,"althingi_graduate_count=4; possible_match_1=Grunnskólinn á Ísafirði (Ísafjarðarbær, score=0.894)"
-unresolved_analysis_required,,Stöðvarfjarðarskóli,"althingi_graduate_count=4; possible_match_1=Öxarfjarðarskóli (Norðurþing, score=0.857)"
-unresolved_analysis_required,,"Auðarskóli, grunnskóladeild Búðardal","althingi_graduate_count=2; possible_match_1= (, score=)"
-unresolved_analysis_required,,Eskifjarðarskóli,"althingi_graduate_count=2; possible_match_1=Seyðisfjarðarskóli (Seyðisfjarðarkaupstaður, score=0.824)"
-unresolved_analysis_required,,Framsýn menntun ehf.,"althingi_graduate_count=2; possible_match_1= (, score=)"
-unresolved_analysis_required,,Húnavallaskóli,"althingi_graduate_count=2; possible_match_1=Hraunvallaskóli (Hafnarfjarðarkaupstaður, score=0.897)"
-unresolved_analysis_required,,Grunnskóli Djúpavogs,"althingi_graduate_count=1; possible_match_1= (, score=)"
 reference_only,,top_common_unmatched_patterns,grunnskolinn i: 7; grunnskolinn a: 6; barnaskoli hjallastefnunnar: 2; andakilsskoli: 1; asgardsskoli: 1; asgardur: 1; barnaskoli barddaela: 1; barnaskoli olafsfjardar: 1; brautarholts og: 1; brautarholtsskoli: 1

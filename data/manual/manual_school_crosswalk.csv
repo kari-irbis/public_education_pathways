@@ -1,17 +1,17 @@
 source_school_name,normalized_school_name,sveitarfelag,canonical_school_name,manual_status,notes
-"Auðarskóli, grunnskóladeild Búðardal",audarskoli grunnskoladeild budardal,,,,
-Bláskógaskóli Reykholti,blaskogaskoli reykholti,,,,
-Blönduskóli,blonduskoli,,,,
-Eskifjarðarskóli,eskifjardarskoli,,,,
-Framsýn menntun ehf.,framsyn menntun,,,,
-Grunnskóli Djúpavogs,grunnskoli djupavogs,,,,
-Grunnskólinn á Eskifirði,grunnskolinn a eskifirdi,,,,
-Hafralækjarskóli,hafralaekjarskoli,,,,
-Húnavallaskóli,hunavallaskoli,,,,
-Kelduskóli - Vík,kelduskoli vik,,,,
-Laugalandsskóli í Holtum,laugalandsskoli i holtum,,,,
-NÚ - framsýn menntun,nu framsyn menntun,,,,
-Sandgerðisskóli,sandgerdisskoli,,,,
-Stöðvarfjarðarskóli,stodvarfjardarskoli,,,,
-Vættaskóli - Engi,vaettaskoli engi,,,,
-Víkurskóli,vikurskoli,,,,
+"Auðarskóli, grunnskóladeild Búðardal",audarskoli grunnskoladeild budardal,Dalabyggð,Auðarskóli,matched,Búðardalur school / Auðarskóli.
+Bláskógaskóli Reykholti,blaskogaskoli reykholti,Bláskógabyggð,Reykholtsskóli / Bláskógaskóli Reykholti,matched,Reykholt location of Bláskógaskóli / current Reykholtsskóli naming.
+Blönduskóli,blonduskoli,Húnabyggð,Blönduskóli / Húnaskóli,matched,Current municipality harmonized to Húnabyggð.
+Eskifjarðarskóli,eskifjardarskoli,Fjarðabyggð,Grunnskóli Eskifjarðar,matched,Same school/name variant.
+Framsýn menntun ehf.,framsyn menntun,Hafnarfjarðarkaupstaður,NÚ / Framsýn menntun,matched,Same entity as NÚ - framsýn menntun.
+Grunnskóli Djúpavogs,grunnskoli djupavogs,Múlaþing,Djúpavogsskóli,matched,Current municipality harmonized to Múlaþing.
+Grunnskólinn á Eskifirði,grunnskolinn a eskifirdi,Fjarðabyggð,Grunnskóli Eskifjarðar,matched,Same school/name variant.
+Hafralækjarskóli,hafralaekjarskoli,Þingeyjarsveit,Hafralækjarskóli / Þingeyjarskóli,matched,Historical/renamed-school case; current municipality harmonized to Þingeyjarsveit.
+Húnavallaskóli,hunavallaskoli,Húnabyggð,Húnavallaskóli / Húnaskóli,matched,Current municipality harmonized to Húnabyggð.
+Kelduskóli - Vík,kelduskoli vik,Reykjavíkurborg,Kelduskóli - Vík,matched,Reykjavík school site.
+Laugalandsskóli í Holtum,laugalandsskoli i holtum,Rangárþing ytra,Grunnskólinn á Laugalandi / Laugalandsskóli,matched,Same school/name variant.
+NÚ - framsýn menntun,nu framsyn menntun,Hafnarfjarðarkaupstaður,NÚ / Framsýn menntun,matched,Same entity as Framsýn menntun ehf.
+Sandgerðisskóli,sandgerdisskoli,Suðurnesjabær,Grunnskólinn í Sandgerði / Sandgerðisskóli,matched,Current municipality harmonized to Suðurnesjabær.
+Stöðvarfjarðarskóli,stodvarfjardarskoli,Fjarðabyggð,Breiðdals- og Stöðvarfjarðarskóli,matched,Stöðvarfjörður school/site.
+Vættaskóli - Engi,vaettaskoli engi,Reykjavíkurborg,Vættaskóli - Engi,matched,Reykjavík school site.
+Víkurskóli,vikurskoli,Reykjavíkurborg,Víkurskóli,matched,"The PDF has a separate “Víkurskóli, Vík í Mýrdal” row, so the plain Víkurskóli row should map to Reykjavíkurborg."

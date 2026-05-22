@@ -30,6 +30,7 @@ MANUAL_PATH = PROJECT_ROOT / "data" / "manual" / "manual_school_crosswalk.csv"
 REVIEW_PATH = PROJECT_ROOT / "outputs" / "tables" / "school_mapping_review.csv"
 REFERENCE_REVIEW_PATH = PROJECT_ROOT / "outputs" / "tables" / "school_mapping_reference_only_review.csv"
 AUDIT_PATH = PROJECT_ROOT / "outputs" / "tables" / "school_mapping_audit.csv"
+MUNICIPALITY_PATH = PROJECT_ROOT / "data" / "manual" / "municipality_name_crosswalk.csv"
 
 DATASETS = {
     "in_althingi_graduates": PROJECT_ROOT / "data" / "processed" / "althingi_graduates_by_grunnskoli.csv",
@@ -41,6 +42,7 @@ DATASETS = {
 ALTHINGI_COLUMNS = ["in_althingi_graduates", "in_althingi_framhaldsskoli_grunnskoli", "in_althingi_grunnskoli_grades"]
 PRESENCE_COLUMNS = list(DATASETS)
 MANUAL_COLUMNS = ["source_school_name", "normalized_school_name", "sveitarfelag", "canonical_school_name", "manual_status", "notes"]
+MUNICIPALITY_COLUMNS = ["sveitarfelag_source", "sveitarfelag_harmonized", "harmonization_status", "notes"]
 EXCLUDED_NAMES = {"heild", "alls", "faerri en 5 nemendur", "faerri en fimm nemendur"}
 FUZZY_ACCEPT_THRESHOLD = 0.95
 FUZZY_REVIEW_THRESHOLD = 0.78
@@ -58,6 +60,97 @@ MUNICIPALITY_HINTS = [
     ("nordurfelli", "Reykjavíkurborg"),
 ]
 
+MANUAL_SCHOOL_MAPPINGS = {
+    "Auðarskóli, grunnskóladeild Búðardal": ("Auðarskóli", "Dalabyggð", "Búðardalur school / Auðarskóli."),
+    "Bláskógaskóli Reykholti": ("Reykholtsskóli / Bláskógaskóli Reykholti", "Bláskógabyggð", "Reykholt location of Bláskógaskóli / current Reykholtsskóli naming."),
+    "Blönduskóli": ("Blönduskóli / Húnaskóli", "Húnabyggð", "Current municipality harmonized to Húnabyggð."),
+    "Eskifjarðarskóli": ("Grunnskóli Eskifjarðar", "Fjarðabyggð", "Same school/name variant."),
+    "Framsýn menntun ehf.": ("NÚ / Framsýn menntun", "Hafnarfjarðarkaupstaður", "Same entity as NÚ - framsýn menntun."),
+    "Grunnskóli Djúpavogs": ("Djúpavogsskóli", "Múlaþing", "Current municipality harmonized to Múlaþing."),
+    "Grunnskólinn á Eskifirði": ("Grunnskóli Eskifjarðar", "Fjarðabyggð", "Same school/name variant."),
+    "Hafralækjarskóli": ("Hafralækjarskóli / Þingeyjarskóli", "Þingeyjarsveit", "Historical/renamed-school case; current municipality harmonized to Þingeyjarsveit."),
+    "Húnavallaskóli": ("Húnavallaskóli / Húnaskóli", "Húnabyggð", "Current municipality harmonized to Húnabyggð."),
+    "Kelduskóli - Vík": ("Kelduskóli - Vík", "Reykjavíkurborg", "Reykjavík school site."),
+    "Laugalandsskóli í Holtum": ("Grunnskólinn á Laugalandi / Laugalandsskóli", "Rangárþing ytra", "Same school/name variant."),
+    "NÚ - framsýn menntun": ("NÚ / Framsýn menntun", "Hafnarfjarðarkaupstaður", "Same entity as Framsýn menntun ehf."),
+    "Sandgerðisskóli": ("Grunnskólinn í Sandgerði / Sandgerðisskóli", "Suðurnesjabær", "Current municipality harmonized to Suðurnesjabær."),
+    "Stöðvarfjarðarskóli": ("Breiðdals- og Stöðvarfjarðarskóli", "Fjarðabyggð", "Stöðvarfjörður school/site."),
+    "Vættaskóli - Engi": ("Vættaskóli - Engi", "Reykjavíkurborg", "Reykjavík school site."),
+    "Víkurskóli": ("Víkurskóli", "Reykjavíkurborg", "The PDF has a separate “Víkurskóli, Vík í Mýrdal” row, so the plain Víkurskóli row should map to Reykjavíkurborg."),
+}
+
+DEFAULT_MUNICIPALITY_CROSSWALK = [
+    ("Sandgerðisbær", "Suðurnesjabær", "harmonized", "Former municipality; now Suðurnesjabær."),
+    ("Sveitarfélagið Garður", "Suðurnesjabær", "harmonized", "Former municipality; now Suðurnesjabær."),
+    ("Blönduósbær", "Húnabyggð", "harmonized", "Former municipality; now Húnabyggð."),
+    ("Húnavatnshreppur", "Húnabyggð", "harmonized", "Former municipality; now Húnabyggð."),
+    ("Skútustaðahreppur", "Þingeyjarsveit", "harmonized", "Former municipality; now Þingeyjarsveit."),
+    ("Tálknafjarðarhreppur", "Vesturbyggð", "harmonized", "Merged into Vesturbyggð."),
+    ("Akureyrarkaupstaður", "Akureyrarbær", "harmonized", "Current official municipality name."),
+    ("Seltjarnarneskaupstaður", "Seltjarnarnesbær", "harmonized", "Current official municipality name."),
+    ("Bolungarvík", "Bolungarvíkurkaupstaður", "harmonized", "Current official municipality name."),
+    ("Djúpavogshreppur", "Múlaþing", "harmonized", "Former municipality; now Múlaþing."),
+    ("Fljótsdalshérað", "Múlaþing", "harmonized", "Former municipality; now Múlaþing."),
+    ("Seyðisfjarðarkaupstaður", "Múlaþing", "harmonized", "Former municipality; now Múlaþing."),
+    ("Borgarfjarðarhreppur", "Múlaþing", "harmonized", "Former municipality; now Múlaþing."),
+    ("Reykhólahreppur", "Reykhólahreppur", "unchanged", "Already current for project joins."),
+    ("Ísafjarðarbær", "Ísafjarðarbær", "unchanged", "Already current for project joins."),
+    ("Reykjavíkurborg", "Reykjavíkurborg", "unchanged", "Already current for project joins."),
+    ("Kópavogsbær", "Kópavogsbær", "unchanged", "Already current for project joins."),
+    ("Garðabær", "Garðabær", "unchanged", "Already current for project joins."),
+    ("Hafnarfjarðarkaupstaður", "Hafnarfjarðarkaupstaður", "unchanged", "Already current for project joins."),
+    ("Mosfellsbær", "Mosfellsbær", "unchanged", "Already current for project joins."),
+    ("Fjarðabyggð", "Fjarðabyggð", "unchanged", "Already current for project joins."),
+    ("Rangárþing ytra", "Rangárþing ytra", "unchanged", "Already current for project joins."),
+    ("Bláskógabyggð", "Bláskógabyggð", "unchanged", "Already current for project joins."),
+    ("Dalabyggð", "Dalabyggð", "unchanged", "Already current for project joins."),
+    ("Vesturbyggð", "Vesturbyggð", "unchanged", "Already current for project joins."),
+    ("Þingeyjarsveit", "Þingeyjarsveit", "unchanged", "Already current for project joins."),
+    ("Húnabyggð", "Húnabyggð", "unchanged", "Already current for project joins."),
+    ("Suðurnesjabær", "Suðurnesjabær", "unchanged", "Already current for project joins."),
+    ("Múlaþing", "Múlaþing", "unchanged", "Already current for project joins."),
+    ("Akraneskaupstaður", "Akraneskaupstaður", "unchanged", "Already current for project joins."),
+    ("Borgarbyggð", "Borgarbyggð", "unchanged", "Already current for project joins."),
+    ("Dalvíkurbyggð", "Dalvíkurbyggð", "unchanged", "Already current for project joins."),
+    ("Eyjafjarðarsveit", "Eyjafjarðarsveit", "unchanged", "Already current for project joins."),
+    ("Fjallabyggð", "Fjallabyggð", "unchanged", "Already current for project joins."),
+    ("Flóahreppur", "Flóahreppur", "unchanged", "Already current for project joins."),
+    ("Grindavíkurbær", "Grindavíkurbær", "unchanged", "Already current for project joins."),
+    ("Grundarfjarðarbær", "Grundarfjarðarbær", "unchanged", "Already current for project joins."),
+    ("Grímsnes- og Grafningsher.", "Grímsnes- og Grafningshreppur", "harmonized", "Samband school list abbreviation expanded to current municipality name."),
+    ("Grýtubakkahreppur", "Grýtubakkahreppur", "unchanged", "Already current for project joins."),
+    ("Hrunamannahreppur", "Hrunamannahreppur", "unchanged", "Already current for project joins."),
+    ("Hvalfjarðarsveit", "Hvalfjarðarsveit", "unchanged", "Already current for project joins."),
+    ("Hveragerðisbær", "Hveragerðisbær", "unchanged", "Already current for project joins."),
+    ("Hörgársveit", "Hörgársveit", "unchanged", "Already current for project joins."),
+    ("Húnaþing vestra", "Húnaþing vestra", "unchanged", "Already current for project joins."),
+    ("Kaldrananeshreppur", "Kaldrananeshreppur", "unchanged", "Already current for project joins."),
+    ("Langanesbyggð", "Langanesbyggð", "unchanged", "Already current for project joins."),
+    ("Múlaþing (Borgarfjarðarhreppur)", "Múlaþing", "harmonized", "Samband school list parenthetical source area collapsed to current municipality."),
+    ("Múlaþing (Djúpavogshreppur)", "Múlaþing", "harmonized", "Samband school list parenthetical source area collapsed to current municipality."),
+    ("Múlaþing (Fljótsdalshérað)", "Múlaþing", "harmonized", "Samband school list parenthetical source area collapsed to current municipality."),
+    ("Mýrdalshreppur", "Mýrdalshreppur", "unchanged", "Already current for project joins."),
+    ("Norðurþing", "Norðurþing", "unchanged", "Already current for project joins."),
+    ("Rangárþing eystra", "Rangárþing eystra", "unchanged", "Already current for project joins."),
+    ("Reykjanesbær", "Reykjanesbær", "unchanged", "Already current for project joins."),
+    ("Skaftárhreppur", "Skaftárhreppur", "unchanged", "Already current for project joins."),
+    ("Skeiða- og Gnúpverjahreppur", "Skeiða- og Gnúpverjahreppur", "unchanged", "Already current for project joins."),
+    ("Snæfellsbær", "Snæfellsbær", "unchanged", "Already current for project joins."),
+    ("Strandabyggð", "Strandabyggð", "unchanged", "Already current for project joins."),
+    ("Stykkishólmsbær", "Stykkishólmsbær", "unchanged", "Already current for project joins."),
+    ("Svalbarðsstrandarhreppur", "Svalbarðsstrandarhreppur", "unchanged", "Already current for project joins."),
+    ("Sveitarfélagið Hornafjörður", "Sveitarfélagið Hornafjörður", "unchanged", "Already current for project joins."),
+    ("Sveitarfélagið Skagafjörður", "Sveitarfélagið Skagafjörður", "unchanged", "Already current for project joins."),
+    ("Sveitarfélagið Skagaströnd", "Sveitarfélagið Skagaströnd", "unchanged", "Already current for project joins."),
+    ("Sveitarfélagið Vogar", "Sveitarfélagið Vogar", "unchanged", "Already current for project joins."),
+    ("Sveitarfélagið Árborg", "Sveitarfélagið Árborg", "unchanged", "Already current for project joins."),
+    ("Sveitarfélagið Ölfus", "Sveitarfélagið Ölfus", "unchanged", "Already current for project joins."),
+    ("Súðavík", "Súðavíkurhreppur", "harmonized", "Source place-name form expanded to current municipality name."),
+    ("Vestmannaeyjabær", "Vestmannaeyjabær", "unchanged", "Already current for project joins."),
+    ("Vopnafjarðarhreppur", "Vopnafjarðarhreppur", "unchanged", "Already current for project joins."),
+]
+
+
 
 class LinkParser(html.parser.HTMLParser):
     def __init__(self) -> None:
@@ -73,7 +166,7 @@ class LinkParser(html.parser.HTMLParser):
 
 
 def ensure_dirs() -> None:
-    for path in [RAW_PAGE_PATH.parent, CROSSWALK_PATH.parent, MANUAL_PATH.parent, REVIEW_PATH.parent]:
+    for path in [RAW_PAGE_PATH.parent, CROSSWALK_PATH.parent, MANUAL_PATH.parent, REVIEW_PATH.parent, MUNICIPALITY_PATH.parent]:
         path.mkdir(parents=True, exist_ok=True)
 
 
@@ -165,6 +258,45 @@ def write_csv(path: Path, rows: list[dict[str, object]], fieldnames: list[str]) 
         for row in rows:
             writer.writerow(row)
 
+def default_municipality_rows() -> list[dict[str, str]]:
+    return [
+        {
+            "sveitarfelag_source": source,
+            "sveitarfelag_harmonized": harmonized,
+            "harmonization_status": status,
+            "notes": notes,
+        }
+        for source, harmonized, status, notes in DEFAULT_MUNICIPALITY_CROSSWALK
+    ]
+
+
+def ensure_municipality_crosswalk_file() -> list[dict[str, str]]:
+    rows_by_source = {row["sveitarfelag_source"]: row for row in default_municipality_rows()}
+    if MUNICIPALITY_PATH.exists():
+        for row in read_csv_rows(MUNICIPALITY_PATH):
+            source = row.get("sveitarfelag_source", "").strip()
+            if not source:
+                continue
+            rows_by_source[source] = {col: row.get(col, "") for col in MUNICIPALITY_COLUMNS}
+    rows = sorted(rows_by_source.values(), key=lambda row: row["sveitarfelag_source"])
+    write_csv(MUNICIPALITY_PATH, rows, MUNICIPALITY_COLUMNS)
+    return rows
+
+
+def municipality_lookup(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
+    return {row["sveitarfelag_source"]: row for row in rows if row.get("sveitarfelag_source")}
+
+
+def harmonize_municipality(source: str, lookup: dict[str, dict[str, str]]) -> tuple[str, str, str]:
+    source = (source or "").strip()
+    if not source:
+        return "", "", ""
+    if source in lookup:
+        row = lookup[source]
+        return row.get("sveitarfelag_harmonized", source).strip() or source, row.get("harmonization_status", "unchanged"), row.get("notes", "")
+    return source, "unchanged", "No project-local harmonization needed; carried forward as current/source name."
+
+
 
 def load_source_universe() -> dict[str, dict[str, object]]:
     universe: dict[str, dict[str, object]] = {}
@@ -253,9 +385,25 @@ def load_external_mapping() -> tuple[list[dict[str, str]], dict[str, list[dict[s
 
 
 def load_manual_crosswalk() -> tuple[dict[str, dict[str, str]], list[dict[str, str]]]:
-    if not MANUAL_PATH.exists():
-        return {}, []
-    rows = read_csv_rows(MANUAL_PATH)
+    rows_by_name: dict[str, dict[str, str]] = {}
+    if MANUAL_PATH.exists():
+        for row in read_csv_rows(MANUAL_PATH):
+            name = row.get("source_school_name", "").strip()
+            if name:
+                rows_by_name[name] = {col: row.get(col, "") for col in MANUAL_COLUMNS}
+    for name, (canonical, municipality, notes) in MANUAL_SCHOOL_MAPPINGS.items():
+        existing = rows_by_name.get(name, {})
+        rows_by_name[name] = {
+            "source_school_name": name,
+            "normalized_school_name": existing.get("normalized_school_name") or normalize_school_name(name),
+            "sveitarfelag": existing.get("sveitarfelag") or municipality,
+            "canonical_school_name": existing.get("canonical_school_name") or canonical,
+            "manual_status": existing.get("manual_status") or "matched",
+            "notes": existing.get("notes") or notes,
+        }
+    rows = sorted(rows_by_name.values(), key=lambda row: normalize_school_name(row["source_school_name"]))
+    write_csv(MANUAL_PATH, rows, MANUAL_COLUMNS)
+
     manual = {}
     non_empty_rows = []
     for row in rows:
@@ -268,7 +416,6 @@ def load_manual_crosswalk() -> tuple[dict[str, dict[str, str]], list[dict[str, s
         if status in {"matched", "matched_manual", "ok"} and row.get("sveitarfelag", "").strip():
             manual[name] = row
     return manual, non_empty_rows
-
 
 def load_althingi_graduate_counts() -> dict[str, int]:
     counts = {}
@@ -447,8 +594,10 @@ def build_manual_file_rows(crosswalk: list[dict[str, object]], existing_non_empt
     return sorted(rows.values(), key=lambda row: str(row["normalized_school_name"]))
 
 
-def build_crosswalk() -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]], list[dict[str, object]], str]:
+def build_crosswalk() -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]], list[dict[str, object]], str, list[dict[str, str]]]:
     source_description, _ = ensure_external_mapping_source()
+    municipality_rows = ensure_municipality_crosswalk_file()
+    municipality_by_source = municipality_lookup(municipality_rows)
     mapping_rows, mapping_by_variant = load_external_mapping()
     manual, existing_non_empty_manual = load_manual_crosswalk()
     graduate_counts = load_althingi_graduate_counts()
@@ -465,6 +614,10 @@ def build_crosswalk() -> tuple[list[dict[str, object]], list[dict[str, object]],
             "mapping_priority": "",
             "canonical_school_name": "",
             "sveitarfelag": "",
+            "sveitarfelag_source": "",
+            "sveitarfelag_harmonized": "",
+            "sveitarfelag_harmonization_status": "",
+            "sveitarfelag_harmonization_note": "",
             "match_status": "",
             "match_confidence": "",
             "match_source": "",
@@ -498,6 +651,11 @@ def build_crosswalk() -> tuple[list[dict[str, object]], list[dict[str, object]],
             else:
                 base.update({"match_status": "needs_manual_review", "match_confidence": f"{float(candidates[0]['score']):.3f}" if candidates else "", "match_source": "", "notes": "No exact, rule, municipality, or high-confidence fuzzy match accepted."})
         base["mapping_priority"] = mapping_priority(base)
+        base["sveitarfelag_source"] = base.get("sveitarfelag", "")
+        harmonized, harmonization_status, harmonization_note = harmonize_municipality(str(base["sveitarfelag_source"]), municipality_by_source)
+        base["sveitarfelag_harmonized"] = harmonized
+        base["sveitarfelag_harmonization_status"] = harmonization_status
+        base["sveitarfelag_harmonization_note"] = harmonization_note
         if base["match_status"] == "needs_manual_review":
             review = review_row(base, candidates)
             if base["mapping_priority"] == "analysis_required":
@@ -506,7 +664,7 @@ def build_crosswalk() -> tuple[list[dict[str, object]], list[dict[str, object]],
                 review["notes"] = review["notes"] + " Reference-only Hagstofa row; not needed for current analysis."
                 reference_review.append(review)
         crosswalk.append(base)
-    return crosswalk, analysis_review, reference_review, build_manual_file_rows(crosswalk, existing_non_empty_manual), source_description
+    return crosswalk, analysis_review, reference_review, build_manual_file_rows(crosswalk, existing_non_empty_manual), source_description, municipality_rows
 
 
 def build_audit(crosswalk: list[dict[str, object]], analysis_review: list[dict[str, object]], reference_review: list[dict[str, object]], source_description: str) -> list[dict[str, object]]:
@@ -532,10 +690,14 @@ def build_audit(crosswalk: list[dict[str, object]], analysis_review: list[dict[s
         {"section": "summary", "dataset": "", "item": "reference_only_total", "value": len(reference_rows)},
         {"section": "summary", "dataset": "", "item": "reference_only_unresolved", "value": reference_counts["needs_manual_review"]},
         {"section": "summary", "dataset": "", "item": "excluded_aggregate_group_rows", "value": len(excluded_rows)},
+        {"section": "summary", "dataset": "", "item": "rows_with_sveitarfelag_harmonized_populated", "value": sum(1 for row in crosswalk if row["sveitarfelag_harmonized"])},
+        {"section": "summary", "dataset": "", "item": "municipality_harmonizations_applied", "value": sum(1 for row in crosswalk if row["sveitarfelag_harmonization_status"] == "harmonized")},
+        {"section": "summary", "dataset": "", "item": "municipality_names_needing_review", "value": sum(1 for row in crosswalk if row["sveitarfelag_harmonization_status"] == "needs_review")},
+        {"section": "source", "dataset": "", "item": "municipality_harmonization_source", "value": "Project-local municipality_name_crosswalk.csv seeded from agreed Phase 4 harmonization mappings."},
     ]
     for col in PRESENCE_COLUMNS:
         rows = [row for row in crosswalk if row[col] == "true" and row["mapping_priority"] != "excluded_group_or_aggregate"]
-        matched = sum(1 for row in rows if row["sveitarfelag"])
+        matched = sum(1 for row in rows if row["sveitarfelag_harmonized"])
         rate = matched / len(rows) if rows else 0
         audit.append({"section": "match_rate_by_source", "dataset": col, "item": "matched_non_excluded", "value": f"{matched}/{len(rows)} ({rate:.1%})"})
     audit.append({"section": "manual_review", "dataset": "analysis_required", "item": "notes", "value": "Main review file includes only unresolved analysis_required rows. Reference-only unresolved rows are in school_mapping_reference_only_review.csv."})
@@ -549,9 +711,10 @@ def build_audit(crosswalk: list[dict[str, object]], analysis_review: list[dict[s
 
 def main() -> None:
     ensure_dirs()
-    crosswalk, analysis_review, reference_review, manual_rows, source_description = build_crosswalk()
+    crosswalk, analysis_review, reference_review, manual_rows, source_description, municipality_rows = build_crosswalk()
     crosswalk_fields = [
-        "source_school_name", "normalized_school_name", "mapping_priority", "canonical_school_name", "sveitarfelag", *PRESENCE_COLUMNS,
+        "source_school_name", "normalized_school_name", "mapping_priority", "canonical_school_name", "sveitarfelag",
+        "sveitarfelag_source", "sveitarfelag_harmonized", "sveitarfelag_harmonization_status", "sveitarfelag_harmonization_note", *PRESENCE_COLUMNS,
         "match_status", "match_confidence", "match_source", "althingi_graduate_count", "size_evidence_note", "notes",
     ]
     review_fields = [
@@ -562,11 +725,13 @@ def main() -> None:
     write_csv(REVIEW_PATH, analysis_review, review_fields)
     write_csv(REFERENCE_REVIEW_PATH, reference_review, review_fields)
     write_csv(MANUAL_PATH, manual_rows, MANUAL_COLUMNS)
+    write_csv(MUNICIPALITY_PATH, municipality_rows, MUNICIPALITY_COLUMNS)
     write_csv(AUDIT_PATH, build_audit(crosswalk, analysis_review, reference_review, source_description), ["section", "dataset", "item", "value"])
     print(f"Wrote {len(crosswalk)} rows to {CROSSWALK_PATH}")
     print(f"Wrote {len(analysis_review)} analysis-required review rows to {REVIEW_PATH}")
     print(f"Wrote {len(reference_review)} reference-only review rows to {REFERENCE_REVIEW_PATH}")
     print(f"Wrote {len(manual_rows)} rows to {MANUAL_PATH}")
+    print(f"Wrote {len(municipality_rows)} rows to {MUNICIPALITY_PATH}")
     print(f"Wrote audit to {AUDIT_PATH}")
 
 

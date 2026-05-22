@@ -13,6 +13,7 @@ MANUAL_PATH = PROJECT_ROOT / "data" / "manual" / "manual_school_crosswalk.csv"
 REVIEW_PATH = PROJECT_ROOT / "outputs" / "tables" / "school_mapping_review.csv"
 REFERENCE_REVIEW_PATH = PROJECT_ROOT / "outputs" / "tables" / "school_mapping_reference_only_review.csv"
 AUDIT_PATH = PROJECT_ROOT / "outputs" / "tables" / "school_mapping_audit.csv"
+MUNICIPALITY_PATH = PROJECT_ROOT / "data" / "manual" / "municipality_name_crosswalk.csv"
 PRESENCE_COLUMNS = [
     "in_althingi_graduates",
     "in_althingi_framhaldsskoli_grunnskoli",
@@ -30,7 +31,7 @@ def read_rows(path: Path) -> list[dict[str, str]]:
 
 def main() -> int:
     errors: list[str] = []
-    for path in [CROSSWALK_PATH, MANUAL_PATH, REVIEW_PATH, REFERENCE_REVIEW_PATH, AUDIT_PATH]:
+    for path in [CROSSWALK_PATH, MANUAL_PATH, MUNICIPALITY_PATH, REVIEW_PATH, REFERENCE_REVIEW_PATH, AUDIT_PATH]:
         if not path.exists():
             errors.append(f"missing expected file: {path}")
     if errors:
@@ -38,6 +39,7 @@ def main() -> int:
 
     crosswalk = read_rows(CROSSWALK_PATH)
     manual = read_rows(MANUAL_PATH)
+    municipality = read_rows(MUNICIPALITY_PATH)
     review = read_rows(REVIEW_PATH)
     reference_review = read_rows(REFERENCE_REVIEW_PATH)
     audit = read_rows(AUDIT_PATH)
@@ -52,6 +54,10 @@ def main() -> int:
         "mapping_priority",
         "canonical_school_name",
         "sveitarfelag",
+        "sveitarfelag_source",
+        "sveitarfelag_harmonized",
+        "sveitarfelag_harmonization_status",
+        "sveitarfelag_harmonization_note",
         *PRESENCE_COLUMNS,
         "match_status",
         "match_confidence",
@@ -77,6 +83,7 @@ def main() -> int:
         "notes",
     }
     required_manual = {"source_school_name", "normalized_school_name", "sveitarfelag", "canonical_school_name", "manual_status", "notes"}
+    required_municipality = {"sveitarfelag_source", "sveitarfelag_harmonized", "harmonization_status", "notes"}
     required_audit = {"section", "dataset", "item", "value"}
     if crosswalk and required_crosswalk - set(crosswalk[0]):
         errors.append(f"crosswalk missing columns: {sorted(required_crosswalk - set(crosswalk[0]))}")
@@ -86,6 +93,8 @@ def main() -> int:
         errors.append(f"reference review missing columns: {sorted(required_review - set(reference_review[0]))}")
     if manual and required_manual - set(manual[0]):
         errors.append(f"manual file missing columns: {sorted(required_manual - set(manual[0]))}")
+    if municipality and required_municipality - set(municipality[0]):
+        errors.append(f"municipality file missing columns: {sorted(required_municipality - set(municipality[0]))}")
     if audit and required_audit - set(audit[0]):
         errors.append(f"audit missing columns: {sorted(required_audit - set(audit[0]))}")
 
@@ -103,7 +112,7 @@ def main() -> int:
         if status == "excluded_group_or_aggregate":
             if priority != "excluded_group_or_aggregate":
                 errors.append(f"excluded row has wrong priority: {row['source_school_name']}")
-            if row["sveitarfelag"]:
+            if row["sveitarfelag"] or row["sveitarfelag_source"] or row["sveitarfelag_harmonized"]:
                 errors.append(f"excluded row has sveitarfelag assigned: {row['source_school_name']}")
             continue
         if analysis_presence and priority != "analysis_required":
@@ -111,10 +120,10 @@ def main() -> int:
         if not analysis_presence and priority == "analysis_required":
             errors.append(f"non-Althingi row marked analysis_required: {row['source_school_name']}")
         if priority == "analysis_required":
-            if not row["sveitarfelag"] and status != "needs_manual_review":
-                errors.append(f"analysis_required row lacks sveitarfelag without review status: {row['source_school_name']}")
             if status == "needs_manual_review":
                 expected_analysis_review.add(row["source_school_name"])
+            if not row["sveitarfelag_harmonized"]:
+                errors.append(f"analysis_required row lacks sveitarfelag_harmonized: {row['source_school_name']}")
         elif priority == "reference_only" and status == "needs_manual_review":
             expected_reference_review.add(row["source_school_name"])
 
@@ -134,6 +143,34 @@ def main() -> int:
         if row.get("in_althingi_graduates") != "true" and row.get("in_althingi_framhaldsskoli_grunnskoli") != "true" and row.get("in_althingi_grunnskoli_grades") != "true":
             errors.append(f"main review contains non-analysis row: {row['source_school_name']}")
 
+
+    analysis_unresolved = [row["source_school_name"] for row in crosswalk if row["mapping_priority"] == "analysis_required" and row["match_status"] == "needs_manual_review"]
+    if analysis_unresolved:
+        errors.append(f"analysis_required rows still need manual review: {analysis_unresolved[:20]}")
+    if review:
+        errors.append(f"main review should be empty after agreed manual mappings, found {len(review)} row(s)")
+
+    municipality_by_source = {row["sveitarfelag_source"]: row for row in municipality}
+    known_harmonizations = {
+        "Sandgerðisbær": "Suðurnesjabær",
+        "Sveitarfélagið Garður": "Suðurnesjabær",
+        "Blönduósbær": "Húnabyggð",
+        "Húnavatnshreppur": "Húnabyggð",
+        "Skútustaðahreppur": "Þingeyjarsveit",
+        "Tálknafjarðarhreppur": "Vesturbyggð",
+        "Akureyrarkaupstaður": "Akureyrarbær",
+        "Seltjarnarneskaupstaður": "Seltjarnarnesbær",
+        "Bolungarvík": "Bolungarvíkurkaupstaður",
+    }
+    for source, expected in known_harmonizations.items():
+        actual = municipality_by_source.get(source, {}).get("sveitarfelag_harmonized")
+        if actual != expected:
+            errors.append(f"known municipality harmonization missing/incorrect: {source} -> {actual!r}, expected {expected!r}")
+    for source, expected in known_harmonizations.items():
+        for row in crosswalk:
+            if row["sveitarfelag_source"] == source and row["sveitarfelag_harmonized"] != expected:
+                errors.append(f"crosswalk did not apply harmonization for {row['source_school_name']}: {source} -> {row['sveitarfelag_harmonized']!r}")
+
     audit_items = {row["item"] for row in audit}
     for item in [
         "total_unique_source_school_names",
@@ -143,6 +180,9 @@ def main() -> int:
         "analysis_required_matched_by_rule",
         "analysis_required_matched_by_municipality_only_rule",
         "analysis_required_needing_manual_review",
+        "rows_with_sveitarfelag_harmonized_populated",
+        "municipality_harmonizations_applied",
+        "municipality_names_needing_review",
         "reference_only_total",
         "reference_only_unresolved",
         "excluded_aggregate_group_rows",
@@ -162,7 +202,8 @@ def main() -> int:
         f"reference_only={priorities['reference_only']}, exact={statuses['matched_exact']}, "
         f"fuzzy={statuses['matched_fuzzy_high_confidence']}, rule={statuses['matched_rule']}, "
         f"municipality_rule={statuses['matched_municipality_rule_canonical_uncertain']}, "
-        f"review={statuses['needs_manual_review']}, excluded={statuses['excluded_group_or_aggregate']})."
+        f"review={statuses['needs_manual_review']}, excluded={statuses['excluded_group_or_aggregate']}, "
+        f"municipality_needs_review={sum(1 for row in crosswalk if row['sveitarfelag_harmonization_status'] == 'needs_review')})."
     )
     return 0
 
