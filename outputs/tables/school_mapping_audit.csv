@@ -2,7 +2,7 @@ section,dataset,item,value
 source,,external_mapping_source_used,Samband public grunnskólar Excel: https://samband-islenskra-sveitarfelaga.cdn.prismic.io/samband-islenskra-sveitarfelaga/agHACKYofJOwHEOQ_Netfangalistigrunnsk%C3%B3lauppf%C3%A6r%C3%B0ur11.05.2026.xlsx
 source,,external_mapping_page_cache,data/raw/samband_grunnskolar_page.html
 source,,external_mapping_excel_cache,data/raw/samband_netfangalisti_grunnskola_2026-05-11.xlsx
-summary,,created_at_utc,2026-05-22T00:16:51.588814+00:00
+summary,,created_at_utc,2026-05-22T09:13:09.736393+00:00
 summary,,total_unique_source_school_names,277
 summary,,althingi_relevant_total_including_excluded,145
 summary,,analysis_required_total,143
@@ -16,7 +16,7 @@ summary,,reference_only_total,132
 summary,,reference_only_unresolved,75
 summary,,excluded_aggregate_group_rows,2
 summary,,rows_with_sveitarfelag_harmonized_populated,200
-summary,,municipality_harmonizations_applied,29
+summary,,municipality_harmonizations_applied,33
 summary,,municipality_names_needing_review,0
 source,,municipality_harmonization_source,Project-local municipality_name_crosswalk.csv seeded from agreed Phase 4 harmonization mappings.
 match_rate_by_source,in_althingi_graduates,matched_non_excluded,143/143 (100.0%)

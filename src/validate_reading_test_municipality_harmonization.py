@@ -31,6 +31,8 @@ KNOWN_HARMONIZATIONS = {
     "Húnavatnshreppur": "Húnabyggð",
     "Skútustaðahreppur": "Þingeyjarsveit",
     "Tálknafjarðarhreppur": "Vesturbyggð",
+    "Stykkishólmsbær": "Sveitarfélagið Stykkishólmur",
+    "Sveitarfélagið Skagafjörður": "Skagafjörður",
 }
 
 

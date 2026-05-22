@@ -11,6 +11,7 @@ SPENDING_PATH = PROJECT_ROOT / "data" / "processed" / "education_spend_sveitarfe
 NATIONAL_CONTEXT_PATH = PROJECT_ROOT / "data" / "processed" / "education_spend_national_context.csv"
 AUDIT_PATH = PROJECT_ROOT / "outputs" / "tables" / "education_spending_extraction_audit.csv"
 INTERIM_SCHOOL_ROWS_PATH = PROJECT_ROOT / "data" / "interim" / "education_spend_school_size_2024_school_rows.csv"
+JOIN_COVERAGE_AUDIT_PATH = PROJECT_ROOT / "outputs" / "tables" / "municipality_join_coverage_audit.csv"
 
 REQUIRED_SPENDING_COLUMNS = {
     "year",
@@ -35,6 +36,10 @@ EXPECTED_METRICS = {
     "skolaakstur",
     "kostnadur_brutto",
     "kostnadur_netto",
+}
+KNOWN_HARMONIZATIONS = {
+    "Stykkishólmsbær": "Sveitarfélagið Stykkishólmur",
+    "Sveitarfélagið Skagafjörður": "Skagafjörður",
 }
 
 
@@ -78,6 +83,10 @@ def validate_municipality_output(errors: list[str]) -> None:
             f"row count {len(rows)} does not equal municipalities x metrics "
             f"({len(municipalities)} x {len(EXPECTED_METRICS)})"
         )
+    by_source = {row["sveitarfelag_source"]: row["sveitarfelag_harmonized"] for row in rows}
+    for source, expected in KNOWN_HARMONIZATIONS.items():
+        if source in by_source and by_source[source] != expected:
+            errors.append(f"known spending harmonization not applied: {source} -> {by_source[source]!r}, expected {expected!r}")
     for idx, row in enumerate(rows, start=2):
         if not row["year"].isdigit():
             errors.append(f"row {idx}: year is not an integer: {row['year']!r}")
@@ -127,9 +136,20 @@ def validate_audit(errors: list[str]) -> None:
         errors.append("audit reports municipality names needing harmonization review")
 
 
+def validate_join_coverage_audit(errors: list[str]) -> None:
+    rows = read_rows(JOIN_COVERAGE_AUDIT_PATH)
+    if not rows:
+        errors.append("municipality join coverage audit is empty")
+        return
+    required = {"audit_section", "comparison", "municipality", "in_reading_tests", "in_althingi_school_outcomes", "in_spending", "gap_type", "assessment", "source_values", "note"}
+    missing = required - set(rows[0])
+    if missing:
+        errors.append(f"municipality join coverage audit missing columns: {sorted(missing)}")
+
+
 def main() -> int:
     errors: list[str] = []
-    for path in [AUDIT_PATH, INTERIM_SCHOOL_ROWS_PATH]:
+    for path in [AUDIT_PATH, INTERIM_SCHOOL_ROWS_PATH, JOIN_COVERAGE_AUDIT_PATH]:
         if not path.exists():
             errors.append(f"missing expected file: {path}")
     if SPENDING_PATH.exists():
@@ -142,6 +162,8 @@ def main() -> int:
         errors.append("neither municipality spending output nor national context output exists")
     if AUDIT_PATH.exists():
         validate_audit(errors)
+    if JOIN_COVERAGE_AUDIT_PATH.exists():
+        validate_join_coverage_audit(errors)
     if errors:
         print(f"FAIL: {len(errors)} validation issue(s) found")
         for error in errors[:30]:

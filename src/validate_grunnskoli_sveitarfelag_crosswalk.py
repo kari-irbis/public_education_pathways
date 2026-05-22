@@ -161,6 +161,8 @@ def main() -> int:
         "Akureyrarkaupstaður": "Akureyrarbær",
         "Seltjarnarneskaupstaður": "Seltjarnarnesbær",
         "Bolungarvík": "Bolungarvíkurkaupstaður",
+        "Stykkishólmsbær": "Sveitarfélagið Stykkishólmur",
+        "Sveitarfélagið Skagafjörður": "Skagafjörður",
     }
     for source, expected in known_harmonizations.items():
         actual = municipality_by_source.get(source, {}).get("sveitarfelag_harmonized")
