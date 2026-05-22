@@ -35,6 +35,98 @@ PRIMARY_SPENDING_METRIC = "kostnadur_netto"
 SECONDARY_SPENDING_METRIC = "kostnadur_brutto"
 
 
+MUNICIPALITY_READING_SPENDING_FIELDS = [
+    "sveitarfelag_harmonized",
+    "reading_measurement_period",
+    "reading_metric",
+    "strict_latest_reading_school_year",
+    "strict_latest_reading_value_pct",
+    "strict_latest_reading_component_count",
+    "strict_latest_reading_nonmissing_component_count",
+    "strict_latest_reading_aggregation_method",
+    "strict_latest_reading_note",
+    "latest_available_reading_school_year",
+    "latest_available_reading_value_pct",
+    "latest_available_reading_component_count",
+    "latest_available_reading_nonmissing_component_count",
+    "latest_available_reading_aggregation_method",
+    "latest_available_reading_note",
+    "latest_reading_school_year",
+    "latest_reading_value_pct",
+    "spending_year",
+    "primary_spending_metric",
+    "amount_isk",
+    "spend_per_source_student",
+    "spend_per_resident",
+    "spend_per_resident_age_6_15",
+    "population_total",
+    "population_age_6_15",
+    "denominator_source_student_count",
+    "kostnadur_netto_amount_isk",
+    "kostnadur_netto_spend_per_source_student",
+    "kostnadur_netto_spend_per_resident",
+    "kostnadur_netto_spend_per_resident_age_6_15",
+    "kostnadur_brutto_amount_isk",
+    "kostnadur_brutto_spend_per_source_student",
+    "kostnadur_brutto_spend_per_resident",
+    "kostnadur_brutto_spend_per_resident_age_6_15",
+    "has_strict_latest_reading",
+    "has_latest_available_reading",
+    "has_latest_reading",
+    "has_2024_spending_kostnadur_netto",
+    "has_2024_spending_kostnadur_brutto",
+    "has_2024_population_denominator",
+    "reading_source_url",
+    "spending_source_url",
+    "source_note",
+]
+
+SCHOOL_OUTCOMES_FIELDS = [
+    "source_school_name",
+    "canonical_school_name",
+    "sveitarfelag_harmonized",
+    "sveitarfelag_source",
+    "mapping_priority",
+    "match_status",
+    "match_confidence",
+    "match_source",
+    "graduate_count",
+    "average_grunnskoli_icelandic_grade",
+    "average_grunnskoli_math_grade",
+    "framhaldsskoli_grunnskoli_row_count",
+    "framhaldsskoli_grunnskoli_student_count",
+    "has_graduates_table_row",
+    "has_grades_by_grunnskoli_row",
+    "has_framhaldsskoli_grunnskoli_rows",
+    "is_excluded_group_or_aggregate",
+    "notes",
+    "source_url",
+    "source_note",
+]
+
+MUNICIPALITY_ALTHINGI_FIELDS = [
+    "sveitarfelag_harmonized",
+    "total_matched_graduates",
+    "graduates_with_grade_coverage",
+    "grade_coverage_share",
+    "grade_coverage_note",
+    "number_of_grunnskolar_represented",
+    "average_grunnskoli_icelandic_grade",
+    "average_grunnskoli_math_grade",
+    "weighted_average_grunnskoli_icelandic_grade",
+    "weighted_average_grunnskoli_math_grade",
+    "unweighted_average_grunnskoli_icelandic_grade",
+    "unweighted_average_grunnskoli_math_grade",
+    "average_grade_weighting_method",
+    "schools_with_graduate_counts",
+    "schools_with_grade_rows",
+    "has_graduates_table_coverage",
+    "has_grades_by_grunnskoli_coverage",
+    "has_framhaldsskoli_grunnskoli_coverage",
+    "source_note",
+]
+
+
 def read_rows(path: Path) -> list[dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as file:
         return list(csv.DictReader(file))
@@ -73,19 +165,100 @@ def bool_text(value: bool) -> str:
     return str(value).lower()
 
 
-def latest_reading_rows() -> tuple[dict[str, dict[str, str]], str]:
-    rows = [
+def reading_source_rows() -> list[dict[str, str]]:
+    return [
         row
         for row in read_rows(READING_PATH)
         if row.get("measurement_period") == LATEST_READING_PERIOD and row.get("metric") == LATEST_READING_METRIC
     ]
-    latest_year = max(row["school_year"] for row in rows)
-    latest_rows = {
-        row["sveitarfelag_harmonized"]: row
-        for row in rows
-        if row.get("school_year") == latest_year and row.get("sveitarfelag_harmonized")
+
+
+def component_names(rows: list[dict[str, str]]) -> list[str]:
+    return sorted({row.get("sveitarfelag_source", "") for row in rows if row.get("sveitarfelag_source", "")})
+
+
+def aggregate_reading_components(
+    municipality: str,
+    selected_year: str,
+    selected_rows: list[dict[str, str]],
+    all_municipality_rows: list[dict[str, str]],
+) -> dict[str, object]:
+    all_components = component_names(all_municipality_rows)
+    year_components = component_names(selected_rows)
+    values = [parse_float(row.get("value_pct", "")) for row in selected_rows]
+    nonmissing = [value for value in values if value is not None]
+    nonmissing_components = [
+        row.get("sveitarfelag_source", "") for row in selected_rows if parse_float(row.get("value_pct", "")) is not None
+    ]
+    component_count = len(year_components) if year_components else len(all_components)
+    value: float | None = None
+    method = ""
+    if len(all_components) <= 1:
+        method = "direct_source_municipality_value"
+        value = nonmissing[0] if nonmissing else None
+    elif len(nonmissing) == 1:
+        method = "single_available_component"
+        value = nonmissing[0]
+    elif len(nonmissing) > 1:
+        method = "unweighted_source_component_average"
+        value = sum(nonmissing) / len(nonmissing)
+    else:
+        method = "no_nonmissing_component"
+
+    if len(all_components) <= 1 and nonmissing:
+        note = f"Direct source municipality value for {all_components[0]}."
+    elif len(all_components) <= 1:
+        note = f"Source municipality {all_components[0] if all_components else municipality} has no non-missing value for {selected_year}."
+    elif method == "single_available_component":
+        note = (
+            f"Partial current-municipality coverage: used {nonmissing_components[0]} because other source "
+            f"components were missing. Components: {'; '.join(all_components)}."
+        )
+    elif method == "unweighted_source_component_average":
+        note = (
+            "Multiple source components had non-missing values; used an unweighted average because public "
+            f"student counts are unavailable. Components with values: {'; '.join(sorted(nonmissing_components))}."
+        )
+    else:
+        note = f"No non-missing source component values. Components: {'; '.join(all_components)}."
+
+    return {
+        "school_year": selected_year,
+        "value_pct": fmt_number(value, 2),
+        "component_count": component_count,
+        "nonmissing_component_count": len(nonmissing),
+        "aggregation_method": method,
+        "note": note,
     }
-    return latest_rows, latest_year
+
+
+def reading_aggregates() -> tuple[dict[str, dict[str, dict[str, object]]], set[str], str]:
+    rows = reading_source_rows()
+    latest_year = max(row["school_year"] for row in rows)
+    grouped: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        grouped[row["sveitarfelag_harmonized"]].append(row)
+
+    aggregates: dict[str, dict[str, dict[str, object]]] = {}
+    for municipality, municipality_rows in grouped.items():
+        strict_rows = [row for row in municipality_rows if row.get("school_year") == latest_year]
+        strict = aggregate_reading_components(municipality, latest_year, strict_rows, municipality_rows)
+        years_with_values = sorted(
+            {
+                row["school_year"]
+                for row in municipality_rows
+                if parse_float(row.get("value_pct", "")) is not None
+            }
+        )
+        if years_with_values:
+            available_year = years_with_values[-1]
+            available_rows = [row for row in municipality_rows if row.get("school_year") == available_year]
+            available = aggregate_reading_components(municipality, available_year, available_rows, municipality_rows)
+        else:
+            available = aggregate_reading_components(municipality, "", [], municipality_rows)
+            available["note"] = f"No non-missing vor {LATEST_READING_METRIC} value found in any extracted year."
+        aggregates[municipality] = {"strict": strict, "latest_available": available}
+    return aggregates, set(grouped), latest_year
 
 
 def spending_metric_rows(metric: str) -> dict[str, dict[str, str]]:
@@ -111,24 +284,38 @@ def school_crosswalk() -> dict[str, dict[str, str]]:
 
 
 def build_municipality_reading_spending() -> tuple[list[dict[str, object]], set[str], set[str], set[str], str]:
-    reading, latest_year = latest_reading_rows()
+    reading, reading_municipalities, latest_year = reading_aggregates()
     spending_primary = spending_metric_rows(PRIMARY_SPENDING_METRIC)
     spending_secondary = spending_metric_rows(SECONDARY_SPENDING_METRIC)
     population = population_rows()
-    municipalities = sorted(set(reading) | set(spending_primary) | set(spending_secondary))
+    municipalities = sorted(reading_municipalities | set(spending_primary) | set(spending_secondary))
     rows: list[dict[str, object]] = []
     for municipality in municipalities:
-        reading_row = reading.get(municipality, {})
+        reading_pair = reading.get(municipality, {})
+        strict = reading_pair.get("strict", {})
+        available = reading_pair.get("latest_available", {})
         primary = spending_primary.get(municipality, {})
         secondary = spending_secondary.get(municipality, {})
         pop = population.get(municipality, {})
         rows.append(
             {
                 "sveitarfelag_harmonized": municipality,
-                "latest_reading_school_year": reading_row.get("school_year", latest_year),
-                "latest_reading_measurement_period": LATEST_READING_PERIOD,
-                "latest_reading_metric": LATEST_READING_METRIC,
-                "latest_reading_value_pct": reading_row.get("value_pct", ""),
+                "reading_measurement_period": LATEST_READING_PERIOD,
+                "reading_metric": LATEST_READING_METRIC,
+                "strict_latest_reading_school_year": strict.get("school_year", ""),
+                "strict_latest_reading_value_pct": strict.get("value_pct", ""),
+                "strict_latest_reading_component_count": strict.get("component_count", ""),
+                "strict_latest_reading_nonmissing_component_count": strict.get("nonmissing_component_count", ""),
+                "strict_latest_reading_aggregation_method": strict.get("aggregation_method", ""),
+                "strict_latest_reading_note": strict.get("note", ""),
+                "latest_available_reading_school_year": available.get("school_year", ""),
+                "latest_available_reading_value_pct": available.get("value_pct", ""),
+                "latest_available_reading_component_count": available.get("component_count", ""),
+                "latest_available_reading_nonmissing_component_count": available.get("nonmissing_component_count", ""),
+                "latest_available_reading_aggregation_method": available.get("aggregation_method", ""),
+                "latest_available_reading_note": available.get("note", ""),
+                "latest_reading_school_year": available.get("school_year", ""),
+                "latest_reading_value_pct": available.get("value_pct", ""),
                 "spending_year": SPENDING_YEAR,
                 "primary_spending_metric": PRIMARY_SPENDING_METRIC,
                 "amount_isk": primary.get("amount_isk", ""),
@@ -146,20 +333,22 @@ def build_municipality_reading_spending() -> tuple[list[dict[str, object]], set[
                 "kostnadur_brutto_spend_per_source_student": secondary.get("spend_per_source_student", ""),
                 "kostnadur_brutto_spend_per_resident": secondary.get("spend_per_resident", ""),
                 "kostnadur_brutto_spend_per_resident_age_6_15": secondary.get("spend_per_resident_age_6_15", ""),
-                "has_latest_reading": bool_text(bool(reading_row.get("value_pct", ""))),
+                "has_strict_latest_reading": bool_text(bool(strict.get("value_pct", ""))),
+                "has_latest_available_reading": bool_text(bool(available.get("value_pct", ""))),
+                "has_latest_reading": bool_text(bool(available.get("value_pct", ""))),
                 "has_2024_spending_kostnadur_netto": bool_text(bool(primary)),
                 "has_2024_spending_kostnadur_brutto": bool_text(bool(secondary)),
                 "has_2024_population_denominator": bool_text(bool(pop) or bool(primary.get("population_total", ""))),
-                "reading_source_url": reading_row.get("source_url", ""),
+                "reading_source_url": READING_PATH.name if municipality in reading_municipalities else "",
                 "spending_source_url": primary.get("source_url", "") or secondary.get("source_url", ""),
                 "source_note": (
-                    "Latest vor reading metric is retained as a percentage. Spending is 2024 Samband "
-                    "municipality-level grunnskóli spending; population_age_6_15 is a population proxy, "
-                    "not exact school enrollment."
+                    "Reading fields use vor naer_lagmarksvidmidi_2_3 with explicit source-component aggregation. "
+                    "Latest_available uses the latest non-missing year per municipality. Spending is 2024 Samband "
+                    "municipality-level grunnskóli spending; population_age_6_15 is a population proxy, not exact school enrollment."
                 ),
             }
         )
-    return rows, set(reading), set(spending_primary) | set(spending_secondary), set(population), latest_year
+    return rows, reading_municipalities, set(spending_primary) | set(spending_secondary), set(population), latest_year
 
 
 def rows_by_school(rows: list[dict[str, str]]) -> dict[str, list[dict[str, str]]]:
@@ -245,6 +434,10 @@ def simple_average(values: list[float | None]) -> float | None:
     return sum(complete) / len(complete)
 
 
+def has_grade_coverage(row: dict[str, object]) -> bool:
+    return row.get("average_grunnskoli_icelandic_grade") not in {"", None} or row.get("average_grunnskoli_math_grade") not in {"", None}
+
+
 def build_municipality_althingi_summary(school_rows: list[dict[str, object]]) -> list[dict[str, object]]:
     grouped: dict[str, list[dict[str, object]]] = defaultdict(list)
     for row in school_rows:
@@ -259,6 +452,11 @@ def build_municipality_althingi_summary(school_rows: list[dict[str, object]]) ->
     for municipality, municipality_rows in sorted(grouped.items()):
         graduate_counts = [parse_int(row.get("graduate_count", "")) for row in municipality_rows]
         graduate_counts = [value for value in graduate_counts if value is not None]
+        total_graduates = sum(graduate_counts)
+        graduates_with_grade_coverage = sum(
+            parse_int(row.get("graduate_count", "")) or 0 for row in municipality_rows if has_grade_coverage(row)
+        )
+        grade_coverage_share = None if total_graduates == 0 else graduates_with_grade_coverage / total_graduates
         icelandic_values = [parse_float(row.get("average_grunnskoli_icelandic_grade", "")) for row in municipality_rows]
         math_values = [parse_float(row.get("average_grunnskoli_math_grade", "")) for row in municipality_rows]
         weights = [parse_int(row.get("graduate_count", "")) for row in municipality_rows]
@@ -266,10 +464,17 @@ def build_municipality_althingi_summary(school_rows: list[dict[str, object]]) ->
         weighted_math = weighted_average(list(zip(math_values, weights)))
         unweighted_ice = simple_average(icelandic_values)
         unweighted_math = simple_average(math_values)
+        schools_with_grade_rows = sum(1 for row in municipality_rows if has_grade_coverage(row))
         rows.append(
             {
                 "sveitarfelag_harmonized": municipality,
-                "total_matched_graduates": sum(graduate_counts),
+                "total_matched_graduates": total_graduates,
+                "graduates_with_grade_coverage": graduates_with_grade_coverage,
+                "grade_coverage_share": fmt_number(grade_coverage_share, 4),
+                "grade_coverage_note": (
+                    "graduates_with_grade_coverage sums graduate_count only for schools with at least one "
+                    "grunnskóli Icelandic or math grade average. Use grade_coverage_share to filter weak coverage."
+                ),
                 "number_of_grunnskolar_represented": len({str(row["source_school_name"]) for row in municipality_rows}),
                 "average_grunnskoli_icelandic_grade": fmt_number(weighted_ice if weighted_ice is not None else unweighted_ice),
                 "average_grunnskoli_math_grade": fmt_number(weighted_math if weighted_math is not None else unweighted_math),
@@ -283,12 +488,7 @@ def build_municipality_althingi_summary(school_rows: list[dict[str, object]]) ->
                     else "unweighted_school_average"
                 ),
                 "schools_with_graduate_counts": sum(1 for row in municipality_rows if row.get("graduate_count") not in {"", None}),
-                "schools_with_grade_rows": sum(
-                    1
-                    for row in municipality_rows
-                    if row.get("average_grunnskoli_icelandic_grade") not in {"", None}
-                    or row.get("average_grunnskoli_math_grade") not in {"", None}
-                ),
+                "schools_with_grade_rows": schools_with_grade_rows,
                 "has_graduates_table_coverage": bool_text(any(row.get("has_graduates_table_row") == "true" for row in municipality_rows)),
                 "has_grades_by_grunnskoli_coverage": bool_text(
                     any(row.get("has_grades_by_grunnskoli_row") == "true" for row in municipality_rows)
@@ -314,6 +514,23 @@ def audit_rows(
     municipality_althingi_rows: list[dict[str, object]],
     latest_year: str,
 ) -> list[dict[str, object]]:
+    latest_available_fallback = sorted(
+        str(row["sveitarfelag_harmonized"])
+        for row in municipality_reading_spending_rows
+        if row.get("strict_latest_reading_value_pct") == ""
+        and row.get("latest_available_reading_value_pct") != ""
+    )
+    multi_component = sorted(
+        str(row["sveitarfelag_harmonized"])
+        for row in municipality_reading_spending_rows
+        if parse_int(row.get("strict_latest_reading_component_count", ""))
+        and (parse_int(row.get("strict_latest_reading_component_count", "")) or 0) > 1
+    )
+    weak_grade_coverage = sorted(
+        str(row["sveitarfelag_harmonized"])
+        for row in municipality_althingi_rows
+        if (parse_float(row.get("grade_coverage_share", "")) or 0) < 0.8
+    )
     rows: list[dict[str, object]] = [
         {
             "audit_section": "summary",
@@ -323,7 +540,25 @@ def audit_rows(
         },
         {"audit_section": "summary", "item": "analysis_althingi_school_outcomes_mapped_rows", "value": len(school_rows), "details": ""},
         {"audit_section": "summary", "item": "analysis_municipality_althingi_summary_rows", "value": len(municipality_althingi_rows), "details": ""},
-        {"audit_section": "summary", "item": "latest_reading_school_year_used", "value": latest_year, "details": ""},
+        {"audit_section": "summary", "item": "strict_latest_reading_global_school_year", "value": latest_year, "details": ""},
+        {
+            "audit_section": "summary",
+            "item": "latest_available_reading_fallback_municipalities",
+            "value": len(latest_available_fallback),
+            "details": "; ".join(latest_available_fallback),
+        },
+        {
+            "audit_section": "summary",
+            "item": "multi_component_reading_aggregation_municipalities",
+            "value": len(multi_component),
+            "details": "; ".join(multi_component),
+        },
+        {
+            "audit_section": "summary",
+            "item": "municipalities_with_grade_coverage_share_below_0_8",
+            "value": len(weak_grade_coverage),
+            "details": "; ".join(weak_grade_coverage),
+        },
         {"audit_section": "coverage", "item": "reading_municipalities", "value": len(reading_municipalities), "details": "; ".join(sorted(reading_municipalities))},
         {"audit_section": "coverage", "item": "spending_municipalities", "value": len(spending_municipalities), "details": "; ".join(sorted(spending_municipalities))},
         {"audit_section": "coverage", "item": "althingi_summary_municipalities", "value": len(althingi_municipalities), "details": "; ".join(sorted(althingi_municipalities))},
@@ -355,6 +590,12 @@ def audit_rows(
         [
             {
                 "audit_section": "caveat",
+                "item": "reading_latest_available",
+                "value": "latest non-missing vor value per harmonized municipality",
+                "details": "Multi-source harmonized municipalities preserve component counts and aggregation notes instead of overwriting source rows.",
+            },
+            {
+                "audit_section": "caveat",
                 "item": "spending_denominators",
                 "value": "population_age_6_15 is a population proxy, not exact school enrollment",
                 "details": "spend_per_source_student uses Samband source student counts; population ratios use Hagstofa MAN02005.",
@@ -384,89 +625,9 @@ def main() -> None:
     municipality_althingi = build_municipality_althingi_summary(school_rows)
     althingi_municipalities = {str(row["sveitarfelag_harmonized"]) for row in municipality_althingi}
 
-    write_csv(
-        MUNICIPALITY_READING_SPENDING_OUTPUT,
-        municipality_reading_spending,
-        [
-            "sveitarfelag_harmonized",
-            "latest_reading_school_year",
-            "latest_reading_measurement_period",
-            "latest_reading_metric",
-            "latest_reading_value_pct",
-            "spending_year",
-            "primary_spending_metric",
-            "amount_isk",
-            "spend_per_source_student",
-            "spend_per_resident",
-            "spend_per_resident_age_6_15",
-            "population_total",
-            "population_age_6_15",
-            "denominator_source_student_count",
-            "kostnadur_netto_amount_isk",
-            "kostnadur_netto_spend_per_source_student",
-            "kostnadur_netto_spend_per_resident",
-            "kostnadur_netto_spend_per_resident_age_6_15",
-            "kostnadur_brutto_amount_isk",
-            "kostnadur_brutto_spend_per_source_student",
-            "kostnadur_brutto_spend_per_resident",
-            "kostnadur_brutto_spend_per_resident_age_6_15",
-            "has_latest_reading",
-            "has_2024_spending_kostnadur_netto",
-            "has_2024_spending_kostnadur_brutto",
-            "has_2024_population_denominator",
-            "reading_source_url",
-            "spending_source_url",
-            "source_note",
-        ],
-    )
-    write_csv(
-        SCHOOL_OUTCOMES_OUTPUT,
-        school_rows,
-        [
-            "source_school_name",
-            "canonical_school_name",
-            "sveitarfelag_harmonized",
-            "sveitarfelag_source",
-            "mapping_priority",
-            "match_status",
-            "match_confidence",
-            "match_source",
-            "graduate_count",
-            "average_grunnskoli_icelandic_grade",
-            "average_grunnskoli_math_grade",
-            "framhaldsskoli_grunnskoli_row_count",
-            "framhaldsskoli_grunnskoli_student_count",
-            "has_graduates_table_row",
-            "has_grades_by_grunnskoli_row",
-            "has_framhaldsskoli_grunnskoli_rows",
-            "is_excluded_group_or_aggregate",
-            "notes",
-            "source_url",
-            "source_note",
-        ],
-    )
-    write_csv(
-        MUNICIPALITY_ALTHINGI_OUTPUT,
-        municipality_althingi,
-        [
-            "sveitarfelag_harmonized",
-            "total_matched_graduates",
-            "number_of_grunnskolar_represented",
-            "average_grunnskoli_icelandic_grade",
-            "average_grunnskoli_math_grade",
-            "weighted_average_grunnskoli_icelandic_grade",
-            "weighted_average_grunnskoli_math_grade",
-            "unweighted_average_grunnskoli_icelandic_grade",
-            "unweighted_average_grunnskoli_math_grade",
-            "average_grade_weighting_method",
-            "schools_with_graduate_counts",
-            "schools_with_grade_rows",
-            "has_graduates_table_coverage",
-            "has_grades_by_grunnskoli_coverage",
-            "has_framhaldsskoli_grunnskoli_coverage",
-            "source_note",
-        ],
-    )
+    write_csv(MUNICIPALITY_READING_SPENDING_OUTPUT, municipality_reading_spending, MUNICIPALITY_READING_SPENDING_FIELDS)
+    write_csv(SCHOOL_OUTCOMES_OUTPUT, school_rows, SCHOOL_OUTCOMES_FIELDS)
+    write_csv(MUNICIPALITY_ALTHINGI_OUTPUT, municipality_althingi, MUNICIPALITY_ALTHINGI_FIELDS)
     write_csv(
         COVERAGE_AUDIT_OUTPUT,
         audit_rows(
