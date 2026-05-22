@@ -1,0 +1,156 @@
+year,svnr,sveitarfelag_source,sveitarfelag_harmonized,sveitarfelag_harmonization_status,sveitarfelag_harmonization_note,grunnskoli,grade_span,school_size_group,student_count,tekjur,laun_og_launtengd_gjold,annar_kostnadur_samtals,annar_kostnadur_an_innri_leigu_og_skolaakstur,innri_husaleiga_eignasjodur,skolaakstur,kostnadur_brutto,kostnadur_netto
+2024,3000,Akraneskaupstaður,Akraneskaupstaður,unchanged,Already current for project joins.,Brekkubæjarskóli,1-10,401 - 500,471,-53587696,1019101031,208354664,107446690,100907974,,1227455695,1173867999
+2024,3000,Akraneskaupstaður,Akraneskaupstaður,unchanged,Already current for project joins.,Grundaskóli,1-10,601 >,692,-71297872,1077510256,358850059,187169119,171680940,,1436360315,1365062443
+2024,6000,Akureyrarbær,Akureyrarbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Brekkuskóli,1-10,401 - 500,434,-96182203,725777400,357785153,102755079,255030074,,1083562553,987380350
+2024,6000,Akureyrarbær,Akureyrarbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Giljaskóli,1-10,301 - 400,393,-78686505,746588375,325909521,98357367,227552154,,1072497896,993811391
+2024,6000,Akureyrarbær,Akureyrarbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Glerárskóli,1-10,301 - 400,312,-65261612,557203927,328622803,78115597,250507206,,885826730,820565118
+2024,6000,Akureyrarbær,Akureyrarbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Hríseyjarskóli,1-10,0 - 20,14,-1223152,50336733,23201249,9680031,13521218,,73537982,72314830
+2024,6000,Akureyrarbær,Akureyrarbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Lundarskóli,1-10,401 - 500,476,-77759788,674543208,390878124,95205634,295672490,,1065421332,987661544
+2024,6000,Akureyrarbær,Akureyrarbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Naustaskóli,1-10,301 - 400,346,-89186299,680708589,375240898,81876440,293364458,,1055949487,966763188
+2024,6000,Akureyrarbær,Akureyrarbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Oddeyrarskóli,1-10,101 - 200,173,-43547737,419644003,168313264,50171820,118141444,,587957267,544409530
+2024,6000,Akureyrarbær,Akureyrarbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Síðuskóli,1-10,301 - 400,385,-81401793,815489276,307856013,95496049,212359964,,1123345289,1041943496
+2024,8721,Bláskógabyggð,Bláskógabyggð,unchanged,Already current for project joins.,Bláskógaskóli á Laugarvatni,1-10,51 - 100,56,-7091330,194826345,106771566,63997440,24148798,18625328,301597911,294506581
+2024,8721,Bláskógabyggð,Bláskógabyggð,unchanged,Already current for project joins.,Reykholtsskóli,1-10,51 - 100,97,-27517534,277448765,160478036,78211844,44603616,37662576,437926801,410409267
+2024,4100,Bolungarvíkurkaupstaður,Bolungarvíkurkaupstaður,unchanged,No project-local harmonization needed; carried forward as current/source name.,Grunnskóli Bolungarvíkur,1-10,101 - 200,122,-26568388,374627814,90065726,60378302,29687424,,464693540,438125152
+2024,3609,Borgarbyggð,Borgarbyggð,unchanged,Already current for project joins.,Grunnskóli Borgarfjarðarsveitar,1-10,101 - 200,172,-20730564,446258024,245736934,67823956,75401880,102511098,691994958,671264394
+2024,3609,Borgarbyggð,Borgarbyggð,unchanged,Already current for project joins.,Grunnskólinn í Borgarnesi,1-10,301 - 400,335,-3910189,652397615,373651252,106584917,206574000,60492335,1026048867,1022138678
+2024,3811,Dalabyggð,Dalabyggð,unchanged,Already current for project joins.,Auðarskóli,1-10,51 - 100,70,-16683138,197027616,138422762,41355107,38623800,58443855,335450378,318767240
+2024,6400,Dalvíkurbyggð,Dalvíkurbyggð,unchanged,Already current for project joins.,Grunnskóli Dalvíkurbyggðar,1-10,201 - 300,232,-46643904,488603715,252483288,128303364,91912404,32267520,741087003,694443099
+2024,6400,Dalvíkurbyggð,Dalvíkurbyggð,unchanged,Already current for project joins.,Árskógarskóli,1-7,0 - 20,13,-4863451,68019108,35624162,16765764,18858398,,103643270,98779819
+2024,6513,Eyjafjarðarsveit,Eyjafjarðarsveit,unchanged,Already current for project joins.,Hrafnagilsskóli,1-10,101 - 200,178,-25253829,376093246,221260558,109309114,50693000,61258444,597353804,572099975
+2024,6250,Fjallabyggð,Fjallabyggð,unchanged,Already current for project joins.,Grunnskóli Fjallabyggðar,1-10,201 - 300,223,-25653703,566458705,267912571,102271083,145400316,20241172,834371276,808717573
+2024,7300,Fjarðabyggð,Fjarðabyggð,unchanged,Already current for project joins.,Grunnskóli Eskifjarðar,1-10,101 - 200,142,-3546753,309596360,181620299,70729403,110890896,,491216659,487669906
+2024,7300,Fjarðabyggð,Fjarðabyggð,unchanged,Already current for project joins.,Grunnskóli Fáskrúðsfjarðar,1-10,101 - 200,105,-17247825,218993666,188883280,64577128,124306152,,407876946,390629121
+2024,7300,Fjarðabyggð,Fjarðabyggð,unchanged,Already current for project joins.,Grunnskóli Reyðarfjarðar,1-10,201 - 300,204,-5526858,397217723,199503941,79246997,120256944,,596721664,591194806
+2024,7300,Fjarðabyggð,Fjarðabyggð,unchanged,Already current for project joins.,Grunnskólinn á Stöðvarfirði,1-10,21 - 50,29,-6656839,125237971,86926014,39854202,47071812,,212163985,205507146
+2024,7300,Fjarðabyggð,Fjarðabyggð,unchanged,Already current for project joins.,Nesskóli,1-10,101 - 200,197,-8124969,381774681,200039254,98634346,101404908,,581813935,573688966
+2024,8722,Flóahreppur,Flóahreppur,unchanged,Already current for project joins.,Flóaskóli,1-10,101 - 200,109,-39345608,300809382,151681937,47546870,52979244,51155823,452491319,413145711
+2024,1300,Garðabær,Garðabær,unchanged,Already current for project joins.,Flataskóli,1-7,301 - 400,301,-7210951,649294658,293674416,97729152,195945264,,942969074,935758123
+2024,1300,Garðabær,Garðabær,unchanged,Already current for project joins.,Garðaskóli,8-10,601 >,621,-64225,911506070,362265319,161390527,200874792,,1273771389,1273707164
+2024,1300,Garðabær,Garðabær,unchanged,Already current for project joins.,Hofsstaðaskóli,1-7,401 - 500,477,-5898455,827587665,346232910,134198910,212034000,,1173820575,1167922120
+2024,1300,Garðabær,Garðabær,unchanged,Already current for project joins.,Sjálandsskóli,1-10,201 - 300,271,-14311509,622247815,249255705,92987337,156268368,,871503520,857192011
+2024,1300,Garðabær,Garðabær,unchanged,Already current for project joins.,Urriðaholtsskóli,1-7,301 - 400,361,-1401415,629978170,264412131,114336171,150075960,,894390301,892988886
+2024,1300,Garðabær,Garðabær,unchanged,Already current for project joins.,Álftanesskóli,1-10,301 - 400,369,-7383038,659623566,370851906,101368386,269483520,,1030475472,1023092434
+2024,3709,Grundarfjarðarbær,Grundarfjarðarbær,unchanged,Already current for project joins.,Grunnskóli Grundarfjarðar,1-10,101 - 200,113,-18674731,256329404,111693634,52530077,55098327,4065230,368023038,349348307
+2024,8719,Grímsnes- og Grafningshreppur,Grímsnes- og Grafningshreppur,unchanged,No project-local harmonization needed; carried forward as current/source name.,Kerhólsskóli,1-10,51 - 100,55,-1696445,227810288,173148896,84501914,50621487,38025495,400959184,399262739
+2024,6602,Grýtubakkahreppur,Grýtubakkahreppur,unchanged,Already current for project joins.,Grenivíkurskóli,1-10,21 - 50,48,-6942064,156725978,57032008,26095304,26090000,4846704,213757986,206815922
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Engidalsskóli,1-7,101 - 200,195,-3979060,446531603,181390363,91791931,89598432,,627921966,623942906
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Hraunvallaskóli,1-10,501 - 600,526,-55564080,1101525638,550172384,316627352,233545032,,1651698022,1596133942
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Hvaleyrarskóli,1-10,301 - 400,368,-64014504,785011768,366095194,213705790,152389404,,1151106962,1087092458
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Lækjarskóli,1-10,401 - 500,416,-70620292,789000027,637244887,253443923,383800964,,1426244914,1355624622
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Setbergsskóli,1-10,401 - 500,424,-56748637,789462305,376219908,209196192,167023716,,1165682213,1108933576
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Skarðshlíðarskóli,1-9,401 - 500,460,-47267655,905731230,417933354,213896766,204036588,,1323664584,1276396929
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Víðistaðaskóli,1-10,501 - 600,505,-68327528,879970240,412108496,198330380,213778116,,1292078736,1223751208
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Áslandsskóli,1-10,401 - 500,440,-58865003,767572806,548037613,542784493,5253120,,1315610419,1256745416
+2024,1400,Hafnarfjarðarkaupstaður,Hafnarfjarðarkaupstaður,unchanged,Already current for project joins.,Öldutúnsskóli,1-10,601 >,627,-1051389,978879689,446074696,285299524,160775172,,1424954385,1423902996
+2024,8710,Hrunamannahreppur,Hrunamannahreppur,unchanged,Already current for project joins.,Flúðaskóli,1-10,51 - 100,90,-96025963,258632559,123965176,61996548,38398830,23569798,382597735,286571772
+2024,3511,Hvalfjarðarsveit,Hvalfjarðarsveit,unchanged,Already current for project joins.,Heiðarskóli,1-10,51 - 100,91,-30156221,276859210,168601129,61236736,65602848,41761545,445460339,415304118
+2024,8716,Hveragerðisbær,Hveragerðisbær,unchanged,Already current for project joins.,Grunnskólinn í Hveragerði,1-10,401 - 500,455,-140093270,747402538,331047105,152764105,178283000,,1078449643,938356373
+2024,6515,Hörgársveit,Hörgársveit,unchanged,Already current for project joins.,Þelamerkurskóli,1-10,51 - 100,95,-27514725,267565597,135587862,53185325,47539872,34862665,403153459,375638734
+2024,5613,Húnabyggð,Húnabyggð,unchanged,Already current for project joins.,Húnaskóli,1-10,101 - 200,183,-4011494,372255427,180333920,27262976,78631618,74439326,552589347,548577853
+2024,5508,Húnaþing vestra,Húnaþing vestra,unchanged,Already current for project joins.,Grunnskóli Hunaþing vestra,1-10,101 - 200,123,-29313589,335259867,242309862,109666865,76810740,55832257,577569729,548256140
+2024,4902,Kaldrananeshreppur,Kaldrananeshreppur,unchanged,Already current for project joins.,Grunnskólinn á Drangsnesi,1-10,0 - 20,10,-259165,50835038,23691127,7797892,8656000,7237235,74526165,74267000
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Hörðuvallaskóli,1-10,501 - 600,526,-72996345,979403033,756005575,183244243,572761332,,1735408608,1662412263
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Kársnesskóli,1-10,601 >,674,-74086818,1114570246,384699087,171668319,213030768,,1499269333,1425182515
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Kópavogsskóli,1-10,401 - 500,405,-37837958,824236974,219760753,109592449,110168304,,1043997727,1006159769
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Lindaskóli,1-10,401 - 500,460,-64482362,806265201,323797667,145503551,178294116,,1130062868,1065580506
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Salaskóli,1-10,501 - 600,521,-59001066,1070766201,379740868,161559820,218181048,,1450507069,1391506003
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Smáraskóli,1-10,501 - 600,506,-24347046,838478843,325346951,162848063,162498888,,1163825794,1139478748
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Snælandsskóli,1-10,401 - 500,451,-51784330,801722235,283396137,144858909,138537228,,1085118372,1033334042
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Vatnsendaskóli,1-10,501 - 600,555,-56330379,909169944,496509772,179231656,317278116,,1405679716,1349349337
+2024,1000,Kópavogsbær,Kópavogsbær,unchanged,Already current for project joins.,Álfhólsskóli,1-10,501 - 600,577,-103967059,1291688083,450226897,190627801,259599096,,1741914980,1637947921
+2024,6710,Langanesbyggð,Langanesbyggð,unchanged,Already current for project joins.,Grunnskólinn á Þórshöfn,1-10,51 - 100,55,-102927,147712766,67643759,18850007,48793752,,215356525,215253598
+2024,1604,Mosfellsbær,Mosfellsbær,unchanged,Already current for project joins.,Helgafellsskóli,1-7,401 - 500,419,-70532700,889883193,527781269,137179664,390601605,,1417664462,1347131762
+2024,1604,Mosfellsbær,Mosfellsbær,unchanged,Already current for project joins.,Krikaskóli,1-4,51 - 100,94,-39454591,253586745,116258252,35998610,80259642,,369844997,330390406
+2024,1604,Mosfellsbær,Mosfellsbær,unchanged,Already current for project joins.,Kvíslarskóli,7-10,301 - 400,359,-16360115,619959391,224107029,150510969,73596060,,844066420,827706305
+2024,1604,Mosfellsbær,Mosfellsbær,unchanged,Already current for project joins.,Lágafellsskóli,1-10,501 - 600,576,-36605836,991813577,507649012,210252064,297396948,,1499462589,1462856753
+2024,1604,Mosfellsbær,Mosfellsbær,unchanged,Already current for project joins.,Varmárskóli,1-6,401 - 500,406,-22891184,701213327,410686890,150449394,260237496,,1111900217,1089009033
+2024,7400,Múlaþing,Múlaþing,unchanged,Already current for project joins.,Brúarásskóli,1-10,21 - 50,40,-5041796,147597510,64568354,23757579,39821600,989175,212165864,207124068
+2024,7400,Múlaþing,Múlaþing,unchanged,Already current for project joins.,Djúpavogsskóli,1-10,51 - 100,75,-15324966,251307633,69899065,44736733,24525696,636636,321206698,305881732
+2024,7400,Múlaþing,Múlaþing,unchanged,Already current for project joins.,"Fellaskóli, Múlaþ.",1-10,51 - 100,92,-2951144,226757004,89563197,18322465,69720732,1520000,316320201,313369057
+2024,7400,Múlaþing,Múlaþing,unchanged,Already current for project joins.,Grunnsk. Egilsst. og Eiðum,1-10,401 - 500,425,-27592420,956733314,371290507,104768127,262826380,3696000,1328023821,1300431401
+2024,7400,Múlaþing,Múlaþing,unchanged,Already current for project joins.,Seyðisfjarðarskóli,1-10,51 - 100,53,-3906873,178862685,56599674,21192314,34865360,542000,235462359,231555486
+2024,8508,Mýrdalshreppur,Mýrdalshreppur,unchanged,Already current for project joins.,Grunnskóli Mýrdalshrepps,1-10,51 - 100,64,-6472855,194523202,65734867,29348368,19505496,16881003,260258069,253785214
+2024,6100,Norðurþing,Norðurþing,unchanged,Already current for project joins.,Borgarhólsskóli,1-10,201 - 300,284,-7882352,632958391,136541702,64141154,64265124,8135424,769500093,761617741
+2024,6100,Norðurþing,Norðurþing,unchanged,Already current for project joins.,Grunnskóli Raufarhafnar,1-10,0 - 20,7,-858729,34390651,29451300,17475173,10654548,1321579,63841951,62983222
+2024,6100,Norðurþing,Norðurþing,unchanged,Already current for project joins.,Öxarfjarðarskóli,1-10,21 - 50,35,-6257028,107962722,61792605,20948649,16854804,23989152,169755327,163498299
+2024,8613,Rangárþing eystra,Rangárþing eystra,unchanged,Already current for project joins.,Hvolsskóli,1-10,201 - 300,225,-26075532,602229250,262958351,87231690,104434176,71292485,865187601,839112069
+2024,8614,Rangárþing ytra,Rangárþing ytra,unchanged,Already current for project joins.,Grunnskólinn á Hellu,1-10,101 - 200,176,-41650157,396748599,194645593,105947442,88698151,,591394192,549744035
+2024,8614,Rangárþing ytra,Rangárþing ytra,unchanged,Already current for project joins.,Laugalandsskóli,1-10,51 - 100,96,-47368514,242972398,142222905,95901550,46321355,,385195303,337826789
+2024,4502,Reykhólahreppur,Reykhólahreppur,unchanged,Already current for project joins.,Reykhólaskóli,1-10,21 - 50,34,-63373976,124428311,102106623,58568187,23380200,20158236,226534934,163160958
+2024,2000,Reykjanesbær,Reykjanesbær,unchanged,Already current for project joins.,Akurskóli,1-10,301 - 400,329,-18731560,722878662,279318358,117165982,162152376,,1002197020,983465460
+2024,2000,Reykjanesbær,Reykjanesbær,unchanged,Already current for project joins.,Heiðarskóli Rnes,1-10,401 - 500,457,-35362304,795334177,235176675,137511579,97665096,,1030510852,995148548
+2024,2000,Reykjanesbær,Reykjanesbær,unchanged,Already current for project joins.,Holtaskóli,1-10,401 - 500,416,-33297949,894356668,351349055,288377111,62971944,,1245705723,1212407774
+2024,2000,Reykjanesbær,Reykjanesbær,unchanged,Already current for project joins.,Háaleitisskóli Rnes,1-10,301 - 400,383,-19735093,936138853,197608700,144031268,53577432,,1133747553,1114012460
+2024,2000,Reykjanesbær,Reykjanesbær,unchanged,Already current for project joins.,Myllubakkaskóli,1-10,301 - 400,353,-16005318,740844988,199072959,145839339,53233620,,939917947,923912629
+2024,2000,Reykjanesbær,Reykjanesbær,unchanged,Already current for project joins.,Njarðvíkurskóli,1-10,401 - 500,462,-20998278,1009375181,223135033,147481561,75653472,,1232510214,1211511936
+2024,2000,Reykjanesbær,Reykjanesbær,unchanged,Already current for project joins.,Stapaskóli,1-9,401 - 500,407,-77780970,881648458,277763436,172181328,105582108,,1159411894,1081630924
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Austurbæjarskóli,1-10,301 - 400,342,-35286612,749024421,356371111,94023645,262347466,,1105395532,1070108920
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Borgarskóli,1-7,201 - 300,211,-15842401,448365096,258642847,258642847,,,707007943,691165542
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Breiðagerðisskóli,1-7,301 - 400,371,-35074834,625718173,328958959,95413648,233545311,,954677132,919602298
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Breiðholtsskóli,1-10,401 - 500,413,-27876731,844951181,399133874,120958060,278175814,,1244085055,1216208324
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Dalskóli,1-10,501 - 600,504,-20342449,543510783,568945671,123152793,445792878,,1112456454,1092114005
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Engjaskóli,1-7,201 - 300,221,-21873080,464069085,269571000,269571000,,,733640085,711767005
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,"Fellaskóli, Rvík",1-10,301 - 400,358,-39870503,911578081,377698385,120429426,257268959,,1289276466,1249405963
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Foldaskóli,1-10,401 - 500,463,-32771551,905844179,397738243,125972552,271765691,,1303582422,1270810871
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Fossvogsskóli,1-7,301 - 400,348,-19922796,583948400,340097086,124743232,215353854,,924045486,904122690
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Grandaskóli,1-7,301 - 400,316,-23520241,578572289,275202063,92288606,182913457,,853774352,830254111
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Hagaskóli,8-10,601 >,624,-36549014,835083852,397368839,149958242,247410597,,1232452691,1195903677
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Hamraskóli,1-7,201 - 300,223,-40997986,507982112,269056502,83800724,185255778,,777038614,736040628
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Hlíðaskóli,1-10,601 >,634,-78132616,1154438550,495119417,200121892,294997525,,1649557967,1571425351
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Hvassaleitisskóli,1-7,201 - 300,202,-73472464,530509538,264105542,83324269,180781273,,794615080,721142616
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Háteigsskóli,1-10,501 - 600,501,-35895467,800031770,297114201,118798098,178316103,,1097145971,1061250504
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Hólabrekkuskóli,1-10,501 - 600,511,-33073893,830265099,415088928,172616287,242472641,,1245354027,1212280134
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Húsaskóli,1-7,101 - 200,148,-14588408,325758356,234661669,56328465,178333204,,560420025,545831617
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Ingunnarskóli,1-10,301 - 400,309,-39912000,646113759,328245504,94835025,233410479,,974359263,934447263
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Klébergsskóli,1-10,101 - 200,120,-28848184,330226472,193337388,51112013,142225375,,523563860,494715676
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Langholtsskóli,1-10,601 >,682,-42877744,1121506825,511522758,156225780,355296978,,1633029583,1590151839
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Laugalækjarskóli,7-10,401 - 500,419,-18462456,611101072,334383053,125279988,209103065,,945484125,927021669
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Laugarnesskóli,1-6,501 - 600,539,-34514081,882705369,406189972,136121079,270068893,,1288895341,1254381260
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Melaskóli,1-7,501 - 600,502,-36840608,815866158,321369961,116839763,204530198,,1137236119,1100395511
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Norðlingaskóli,1-10,501 - 600,566,-46463575,925106910,605868103,180889145,424978958,,1530975013,1484511438
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Rimaskóli,1-10,501 - 600,509,-32776473,885462472,402310884,118816739,283494145,,1287773356,1254996883
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Réttarholtsskóli,8-10,401 - 500,455,-25848950,737657338,332799770,111826090,220973680,,1070457108,1044608158
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Seljaskóli,1-10,601 >,663,-147456886,1148472855,389075398,163008323,226067075,,1537548253,1390091367
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Selásskóli,1-7,101 - 200,182,-13141047,385260726,245029321,62480865,182548456,,630290047,617149000
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Sæmundarskóli,1-10,401 - 500,418,-27133996,715737539,449365428,107105806,342259622,,1165102967,1137968971
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Vesturbæjarskóli,1-7,201 - 300,272,-18406108,534312006,379773552,102572906,277200646,,914085558,895679450
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Vogaskóli,1-10,301 - 400,386,-44306185,784079700,390178479,107378181,282800298,,1174258179,1129951994
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Víkurskóli,8-10,201 - 300,236,-24304132,404680645,254054250,89188349,164865901,,658734895,634430763
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Álftamýrarskóli,1-10,401 - 500,415,-79506957,734257961,334564024,132378605,202185419,,1068821985,989315028
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Árbæjarskóli,1-10,601 >,736,-50303096,1067211406,493493412,174190033,319303379,,1560704818,1510401722
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Ártúnsskóli,1-7,101 - 200,154,-10370523,211927348,110880971,41451293,69429678,,322808319,312437796
+2024,0000,Reykjavíkurborg,Reykjavíkurborg,unchanged,Already current for project joins.,Ölduselsskóli,1-10,501 - 600,520,-30299218,827627669,445614377,139932971,305681406,,1273242046,1242942828
+2024,1100,Seltjarnarnesbær,Seltjarnarnesbær,unchanged,No project-local harmonization needed; carried forward as current/source name.,Grunnskóli Seltjarnarness,1-10,501 - 600,584,-11154196,1106823775,385247126,221311585,163935541,,1492070901,1480916705
+2024,5716,Skagafjörður,Skagafjörður,unchanged,No project-local harmonization needed; carried forward as current/source name.,Grunnskólinn austan vatna,1-10,51 - 100,58,-25762660,235709310,135349262,45345274,35922480,54081508,371058572,345295912
+2024,5716,Skagafjörður,Skagafjörður,unchanged,No project-local harmonization needed; carried forward as current/source name.,Varmahlíðaskóli,1-10,101 - 200,112,-34951010,307095824,194569261,47747918,74145780,72675563,501665085,466714075
+2024,5716,Skagafjörður,Skagafjörður,unchanged,No project-local harmonization needed; carried forward as current/source name.,Árskóli,1-10,301 - 400,387,-36273240,822675202,322677832,137019588,156044880,29613364,1145353034,1109079794
+2024,8720,Skeiða- og Gnúpverjahreppur,Skeiða- og Gnúpverjahreppur,unchanged,Already current for project joins.,Þjórsárskóli,1-8,51 - 100,52,-4767813,144330696,183353380,119074257,13168632,51110491,327684076,322916263
+2024,3714,Snæfellsbær,Snæfellsbær,unchanged,Already current for project joins.,Grunnskóli Snæfellsbæjar,1-10,201 - 300,219,-22181190,611791912,182931903,98187746,43229352,41514805,794723815,772542625
+2024,4911,Strandabyggð,Strandabyggð,unchanged,Already current for project joins.,Grunnskólinn Hólmavík,1-10,21 - 50,38,-6164608,132545409,33290148,20539148,12751000,,165835557,159670949
+2024,2510,Suðurnesjabær,Suðurnesjabær,unchanged,Already current for project joins.,Gerðaskóli,1-10,201 - 300,251,-3720942,595706983,192782645,80464649,112317996,,788489628,784768686
+2024,2510,Suðurnesjabær,Suðurnesjabær,unchanged,Already current for project joins.,Sandgerðisskóli,1-10,301 - 400,307,-4447597,713610126,211220525,116896041,94265004,59480,924830651,920383054
+2024,6601,Svalbarðsstrandarhreppur,Svalbarðsstrandarhreppur,unchanged,Already current for project joins.,Valsárskóli,1-10,51 - 100,61,-1459105,173730863,85486712,24977629,53900000,6609083,259217575,257758470
+2024,8401,Sveitarfélagið Hornafjörður,Sveitarfélagið Hornafjörður,unchanged,Already current for project joins.,Grunnskóli Hornafjarðar,1-10,201 - 300,243,-2471407,569108770,168054904,48240565,75249000,44565339,737163674,734692267
+2024,8401,Sveitarfélagið Hornafjörður,Sveitarfélagið Hornafjörður,unchanged,Already current for project joins.,Grunnskólinn í Hofgarði,1-10,0 - 20,4,-119416,24713508,26039772,6543105,8508996,10987671,50753280,50633864
+2024,5609,Sveitarfélagið Skagaströnd,Sveitarfélagið Skagaströnd,unchanged,Already current for project joins.,Höfðaskóli,1-10,51 - 100,65,-32658648,234193980,32222868,20640718,11582150,,266416848,233758200
+2024,3716,Sveitarfélagið Stykkishólmur,Sveitarfélagið Stykkishólmur,unchanged,No project-local harmonization needed; carried forward as current/source name.,Grunnskólinn í Stykkishólmi,1-10,101 - 200,176,-43258268,449766593,118475049,76077513,36710724,5686812,568241642,524983374
+2024,2506,Sveitarfélagið Vogar,Sveitarfélagið Vogar,unchanged,Already current for project joins.,Stóru-Vogaskóli,1-10,201 - 300,218,-2853021,437009075,163478037,79568985,83909052,,600487112,597634091
+2024,8200,Sveitarfélagið Árborg,Sveitarfélagið Árborg,unchanged,Already current for project joins.,Barnaskólinn á Eb. og Stk.,1-10,101 - 200,145,-74832961,435759072,294065786,126685003,132695864,34684919,729824858,654991897
+2024,8200,Sveitarfélagið Árborg,Sveitarfélagið Árborg,unchanged,Already current for project joins.,Stekkjaskóli,1-4,201 - 300,293,-81031546,631836369,381870187,204217357,159825546,17827284,1013706556,932675010
+2024,8200,Sveitarfélagið Árborg,Sveitarfélagið Árborg,unchanged,Already current for project joins.,Sunnulækjarskóli,1-10,601 >,636,-265809373,1431101272,590173909,305837024,250400640,33936245,2021275181,1755465808
+2024,8200,Sveitarfélagið Árborg,Sveitarfélagið Árborg,unchanged,Already current for project joins.,Vallaskóli,1-10,501 - 600,524,-96622386,1092482106,493962127,246630939,241720096,5611092,1586444233,1489821847
+2024,8717,Sveitarfélagið Ölfus,Sveitarfélagið Ölfus,unchanged,Already current for project joins.,Grunnskólinn í Þorlákshöfn,1-10,201 - 300,268,-36452031,600749904,189552043,122831911,65784996,935136,790301947,753849916
+2024,4803,Súðavíkurhreppur,Súðavíkurhreppur,unchanged,No project-local harmonization needed; carried forward as current/source name.,Súðavíkurskóli,1-10,0 - 20,12,-2261371,52238780,17573975,11488941,4804000,1281034,69812755,67551384
+2024,8000,Vestmannaeyjabær,Vestmannaeyjabær,unchanged,Already current for project joins.,Grunnskóli Vestmannaeyja,1-10,501 - 600,540,-46289117,1071094551,378761704,134261704,244500000,,1449856255,1403567138
+2024,4604,Vesturbyggð,Vesturbyggð,unchanged,Already current for project joins.,Bíldudalsskóli,1-10,0 - 20,19,-4645860,86172062,23551195,21346880,1764315,440000,109723257,105077397
+2024,4604,Vesturbyggð,Vesturbyggð,unchanged,Already current for project joins.,Patreksskóli,1-10,51 - 100,93,-7467096,205928526,88605366,50223472,37993394,388500,294533892,287066796
+2024,4604,Vesturbyggð,Vesturbyggð,unchanged,Already current for project joins.,Tálknafjarðarskóli,1-10,21 - 50,21,-1673460,90406501,43092125,16544558,26547567,,133498626,131825166
+2024,7502,Vopnafjarðarhreppur,Vopnafjarðarhreppur,unchanged,Already current for project joins.,Vopnafjarðarskóli,1-10,51 - 100,74,-9136294,227778507,113784278,44101097,46105371,23577810,341562785,332426491
+2024,4200,Ísafjarðarbær,Ísafjarðarbær,unchanged,Already current for project joins.,Grunnskóli Önundarfjarðar,1-10,0 - 20,10,-5995592,51648567,29513908,12775944,16707964,30000,81162475,75166883
+2024,4200,Ísafjarðarbær,Ísafjarðarbær,unchanged,Already current for project joins.,Grunnskólinn Þingeyri,1-10,21 - 50,41,-4775981,110223788,47068391,27734431,18544360,789600,157292179,152516198
+2024,4200,Ísafjarðarbær,Ísafjarðarbær,unchanged,Already current for project joins.,Grunnskólinn á Suðureyri,1-10,21 - 50,36,-4705002,88343791,38730096,19893277,17132756,1704063,127073887,122368885
+2024,4200,Ísafjarðarbær,Ísafjarðarbær,unchanged,Already current for project joins.,Grunnskólinn á Ísafirði,1-10,301 - 400,395,-70886750,728725774,328067496,131384274,162846792,33836430,1056793270,985906520
+2024,6613,Þingeyjarsveit,Þingeyjarsveit,unchanged,Already current for project joins.,Reykjahlíðarskóli,1-10,21 - 50,41,-9153286,151736154,71425959,24184295,31252151,15989513,223162113,214008827
+2024,6613,Þingeyjarsveit,Þingeyjarsveit,unchanged,Already current for project joins.,Stórutjarnarskóli,1-10,21 - 50,29,-14249335,182467380,108331743,31458169,30629348,46244226,290799123,276549788
+2024,6613,Þingeyjarsveit,Þingeyjarsveit,unchanged,Already current for project joins.,Þingeyjaskóli,1-10,51 - 100,73,-25845305,290385626,145321460,43599677,42673429,59048354,435707086,409861781
